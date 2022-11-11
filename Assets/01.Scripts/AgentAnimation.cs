@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AgentAnimation : MonoBehaviour
+{
+    private Animator _ani;
+
+    private readonly int _HashRun = Animator.StringToHash("Run");
+    private void Awake()
+    {
+        _ani = GetComponent<Animator>();
+    }
+
+    public void OnRunAnimation(Vector3 vec)
+    {
+        _ani.SetBool(_HashRun, vec.x != 0 || vec.y != 0 ? true : false);
+    }
+}
