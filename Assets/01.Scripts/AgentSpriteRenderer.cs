@@ -5,14 +5,14 @@ using UnityEngine;
 public class AgentSpriteRenderer : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
-    private ParticleSystemRenderer _particleRenderer;
+    
 
     private bool _isRightFaceDirection = false;
 
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _particleRenderer = GetComponent<ParticleSystemRenderer>();
+        
     }
 
     public void FaceDirection(Vector3 vec)
@@ -25,7 +25,6 @@ public class AgentSpriteRenderer : MonoBehaviour
         {
             _isRightFaceDirection = true;
         }
-        _particleRenderer.flip = new Vector3(_isRightFaceDirection ? 1 : 0, 0, 0);
         _spriteRenderer.flipX = _isRightFaceDirection;
     }
 }
