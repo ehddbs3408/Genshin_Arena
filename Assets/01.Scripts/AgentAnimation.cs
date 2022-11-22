@@ -8,6 +8,7 @@ public class AgentAnimation : MonoBehaviour
 
     private readonly int _HashRun = Animator.StringToHash("Run");
     private readonly int _HashAttack = Animator.StringToHash("Attack");
+    private readonly int _HashDead = Animator.StringToHash("Dead");
     private void Awake()
     {
         _ani = GetComponent<Animator>();
@@ -21,5 +22,9 @@ public class AgentAnimation : MonoBehaviour
     public void OnTriggerAttackAnimation()
     {
         _ani.SetTrigger(_HashAttack);
+    }
+    public void OnTriggerDeadAnimation()
+    {
+        _ani.SetTrigger(_HashDead);
     }
 }

@@ -8,6 +8,7 @@ public class AgentSpriteRenderer : MonoBehaviour
     
 
     private bool _isRightFaceDirection = false;
+    private bool _isDeadFlag = false;
 
     private void Awake()
     {
@@ -17,6 +18,8 @@ public class AgentSpriteRenderer : MonoBehaviour
 
     public void FaceDirection(Vector3 vec)
     {
+        if (_isDeadFlag) return;
+
         if(vec.x > 0)
         {
             _isRightFaceDirection = false;
@@ -26,5 +29,10 @@ public class AgentSpriteRenderer : MonoBehaviour
             _isRightFaceDirection = true;
         }
         _spriteRenderer.flipX = _isRightFaceDirection;
+    }
+
+    public void SpriteRendererFlag(bool value = true)
+    {
+        _isDeadFlag = value;
     }
 }
