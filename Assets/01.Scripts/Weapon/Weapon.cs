@@ -5,18 +5,28 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField]
-    private WeaponDataSO _weaponData;
+    protected WeaponDataSO _weaponData;
 
     private Transform _parentTrm;
     private bool _isEquip;
+
+    private int weaponLevel;
+    private float waeponExp;
+    private int weaponStar;
+
 
     protected virtual void Awake()
     {
         _parentTrm = transform.parent;
     }
-    protected abstract bool OnAttack(Vector3 pos);
 
-    protected void EquipWeapon(Transform parent)
+    private void Init()
+    {
+        //DataManager.LoadJsonFile()
+    }
+    public abstract bool OnAttack(Vector3 clickPos, Vector3 enemyPos);
+
+    public void EquipWeapon(Transform parent)
     {
         if (_isEquip) return;
 
@@ -25,7 +35,7 @@ public abstract class Weapon : MonoBehaviour
         transform.SetParent(_parentTrm);
     }
 
-    protected void DropWeapon()
+    public void DropWeapon()
     {
         if (_isEquip == false) return;
 

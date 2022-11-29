@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Unit
 {
     private Rigidbody _rigid;
+    private Weapon _weapon;
 
     private AgentMovement _agentMovement;
     [SerializeField]
@@ -51,8 +52,26 @@ public class Player : Unit
     {
         Health = unitData.maxHp;
         _rigid = GetComponent<Rigidbody>();
+        _weapon = GetComponent<Weapon>();
         _agentMovement = GetComponent<AgentMovement>();
         _agnetSpriteRenderer = transform.Find(spriteRendererPath).GetComponent<AgentSpriteRenderer>();
         _agnetAnimator = transform.Find(animatorPath).GetComponent<AgentAnimation>();
+    }
+
+    public void Attack()
+    {
+        Collider[] cols = Physics.OverlapSphere(transform.position, 10f);
+
+        Vector3 vec = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        foreach(Collider col in cols)
+        {
+            if(_weapon.OnAttack(vec, col.gameObject.transform.position))
+            {
+                IHittable hit = col.gameObject.GetComponent<IHittable>();
+                hit.OnGethit(10,gameObject);
+            }
+        }
+        
     }
 }
