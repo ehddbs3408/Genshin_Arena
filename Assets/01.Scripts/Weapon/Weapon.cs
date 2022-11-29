@@ -24,7 +24,7 @@ public abstract class Weapon : MonoBehaviour
     {
         //DataManager.LoadJsonFile()
     }
-    public abstract bool OnAttack(Vector3 clickPos, Vector3 enemyPos);
+    public abstract void OnAttack(GameObject dealer);
 
     public void EquipWeapon(Transform parent)
     {

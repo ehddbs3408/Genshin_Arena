@@ -14,6 +14,8 @@ public abstract class Unit : MonoBehaviour, IHittable, IKnockBack, IStun
 
     public virtual void OnGethit(int damaged, GameObject dealer)
     {
+
+        Debug.Log($"hit : {gameObject.name}");
         Health -= damaged;
 
         if(Health <  0)
@@ -23,7 +25,13 @@ public abstract class Unit : MonoBehaviour, IHittable, IKnockBack, IStun
     }
     #endregion
 
-    public abstract void OnGetKnockBack(Vector3 dir, float power, float duration, GameObject dealer = null);
+    public virtual void OnGetKnockBack(Vector3 dir, float power, float duration, GameObject dealer = null)
+    {
 
-    public abstract void OnGetStun(float power, float duration);
+    }
+
+    public virtual void OnGetStun(float power, float duration)
+    {
+
+    }
 }
