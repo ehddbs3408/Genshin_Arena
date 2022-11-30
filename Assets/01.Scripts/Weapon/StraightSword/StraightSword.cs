@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class StraightSword : Weapon
 {
+    Vector3 rightDir;
+    Vector3 leftDir;
+    Vector3 lookDir;
+
     LayerMask mask;
     public override void OnAttack(GameObject dealer)
     {
@@ -13,7 +17,9 @@ public class StraightSword : Weapon
         Vector3 vec = Vector3.zero;
         Ray ray = GameManager.Instance.MainCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitRay;
-        if(Physics.Raycast(ray,out hitRay))
+
+        //Debug.DrawRay(GameManager.Instance.MainCam.transform.position, ray.direction,Color.red);
+        if(Physics.Raycast(ray,out hitRay,LayerMask.GetMask("Ground")))
         {
             vec = hitRay.point;
         }
@@ -36,41 +42,46 @@ public class StraightSword : Weapon
     {
         clickPos = new Vector3(clickPos.x, 0, clickPos.z);
         enemyPos = new Vector3(enemyPos.x, 0, enemyPos.z);
-        Vector2 dir = transform.position - clickPos;
+        Vector3 dir =  clickPos - transform.position;
         float lookAngle = GetAngle(transform.position, clickPos);
-        if (dir.sqrMagnitude < _weaponData.attackRadius)
+
+        if (dir.magnitude < _weaponData.attackRadius)
         {
+            //Vector3 rightDir = AngleToDir(lookAngle + _weaponData.attackAngle * 0.5f);
+            //Vector3 leftDir = AngleToDir(lookAngle - _weaponData.attackAngle * 0.5f);
+            //Vector3 lookDir = AngleToDir(lookAngle);
+            rightDir = AngleToDir(lookAngle + _weaponData.attackAngle * 0.5f);
+            leftDir = AngleToDir(lookAngle - _weaponData.attackAngle * 0.5f);
+            lookDir = AngleToDir(lookAngle);
 
-            
-            Debug.Log(lookAngle);
-
-            Vector3 rightDir = AngleToDir(lookAngle + _weaponData.attackAngle * 0.5f);
-            Vector3 leftDir = AngleToDir(lookAngle - _weaponData.attackAngle * 0.5f);
-            Vector3 lookDir = AngleToDir(lookAngle);
-       
-            Debug.DrawRay(transform.position, rightDir * _weaponData.attackRadius, Color.blue);
-            Debug.DrawRay(transform.position, leftDir * _weaponData.attackRadius, Color.blue);
-            Debug.DrawRay(transform.position, lookDir * _weaponData.attackRadius, Color.cyan);
-
-            Vector3 enemyDir = (transform.position - enemyPos).normalized;
-            float targetAngle = Mathf.Acos(Vector3.Dot(lookDir, enemyDir)) * Mathf.Rad2Deg;
+            Vector3 enemyDir = (enemyPos - transform.position).normalized;
+            float targetAngle = Mathf.Acos(Vector3.Dot(dir.normalized, enemyDir)) * Mathf.Rad2Deg;
 
             if (targetAngle <= _weaponData.attackAngle * 0.5)
                 return true;
         }
         return false;
     }
-    private float GetAngle(Vector2 start, Vector2 end)
+    private float GetAngle(Vector3 from, Vector3 to)
     {
-        Vector2 v2 = end - start;
-        return Mathf.Atan2(v2.y, v2.x) * Mathf.Rad2Deg;
+        float angle = Quaternion.FromToRotation(Vector3.forward, to - from).eulerAngles.y;
+        if (angle > 180)
+        {
+            angle = angle - 360;
+        }
+        return angle;
     }
     private Vector3 AngleToDir(float angle)
     {
         float radian = angle * Mathf.Deg2Rad;
         return new Vector3(Mathf.Sin(radian), 0f, Mathf.Cos(radian));
     }
-
+    private void Update()
+    {
+        Debug.DrawRay(transform.position, rightDir * _weaponData.attackRadius, Color.blue);
+        Debug.DrawRay(transform.position, leftDir * _weaponData.attackRadius, Color.blue);
+        Debug.DrawRay(transform.position, lookDir * _weaponData.attackRadius, Color.cyan);
+    }
 }
 
 

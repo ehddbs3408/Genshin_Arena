@@ -9,6 +9,7 @@ public class AgentSpriteRenderer : MonoBehaviour
 
     private bool _isRightFaceDirection = false;
     private bool _isDeadFlag = false;
+    private bool _isDirectionFlag = true;
 
     private void Awake()
     {
@@ -16,9 +17,18 @@ public class AgentSpriteRenderer : MonoBehaviour
         
     }
 
+    public void FaceDirectionFlagOff()
+    {
+        _isDirectionFlag = false;
+    }
+    public void FaceDirectionFlagOn()
+    {
+        _isDirectionFlag = true;
+    }
+
     public void FaceDirection(Vector3 vec)
     {
-        if (_isDeadFlag) return;
+        if (_isDeadFlag || _isDirectionFlag == false) return;
 
         if(vec.x > 0)
         {

@@ -7,6 +7,9 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected WeaponDataSO _weaponData;
 
+    protected AgentAnimation _agentAnimation;
+    protected AgentSpriteRenderer _agentSpriteRenderer;
+
     private Transform _parentTrm;
     private bool _isEquip;
 
@@ -18,6 +21,8 @@ public abstract class Weapon : MonoBehaviour
     protected virtual void Awake()
     {
         _parentTrm = transform.parent;
+        _agentAnimation = transform.Find("VisualSprite").GetComponent<AgentAnimation>();
+        _agentSpriteRenderer = transform.Find("VisualSprite").GetComponent<AgentSpriteRenderer>();
     }
 
     private void Init()
@@ -25,6 +30,12 @@ public abstract class Weapon : MonoBehaviour
         //DataManager.LoadJsonFile()
     }
     public abstract void OnAttack(GameObject dealer);
+
+    public void WeaponVisualFilp(float dir)
+    {
+        _agentSpriteRenderer.FaceDirection(new Vector3(dir, 0, 0));
+
+    }
 
     public void EquipWeapon(Transform parent)
     {
