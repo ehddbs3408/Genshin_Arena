@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class AgentSpriteRenderer : MonoBehaviour
 {
-    private SpriteRenderer _spriteRenderer;
+    protected SpriteRenderer _spriteRenderer;
 
 
-    private bool _isRightFaceDirection = false;
-    private bool _isDeadFlag = false;
-    private bool _isDirectionFlag = true;
+    protected bool _isRightFaceDirection = false;
+    protected bool _isDeadFlag = false;
+    protected bool _isDirectionFlag = true;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-
     }
 
 
-    public void FaceDirection(float dir, float duration)
+    public virtual void FaceDirection(float dir, float duration)
     {
         FaceDirection(duration);
         _spriteRenderer.flipX = dir > 0 ? false : true;
@@ -47,7 +46,7 @@ public class AgentSpriteRenderer : MonoBehaviour
         _isDirectionFlag = true;
     }
 
-    private void FaceDirection(float duration)
+    protected void FaceDirection(float duration)
     {
         StopAllCoroutines();
         StartCoroutine(FaceDirectionCoroutine(duration));
