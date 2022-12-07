@@ -613,7 +613,7 @@ ParticleSystem:
   m_GameObject: {fileID: 930205359}
   serializedVersion: 8
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 0.5
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -794,7 +794,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9044826, g: 0.4528836, b: 0.9339623, a: 1}
+      maxColor: {r: 0.94040793, g: 0.27735847, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5535,18 +5535,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 930205363}
-        m_TargetAssemblyTypeName: AgentParticleRenderer, Assembly-CSharp
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 93531159}
         m_TargetAssemblyTypeName: AgentAnimation, Assembly-CSharp
         m_MethodName: OnRunAnimation
@@ -5562,18 +5550,6 @@ MonoBehaviour:
       - m_Target: {fileID: 93531160}
         m_TargetAssemblyTypeName: AgentSpriteRenderer, Assembly-CSharp
         m_MethodName: FaceDirection
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
-        m_MethodName: Movement
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5626,6 +5602,33 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: AgentAnimation, Assembly-CSharp
         m_MethodName: OnTriggerAttackAnimation
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDashkeyInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1079283656}
+        m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 930205363}
+        m_TargetAssemblyTypeName: AgentParticleRenderer, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

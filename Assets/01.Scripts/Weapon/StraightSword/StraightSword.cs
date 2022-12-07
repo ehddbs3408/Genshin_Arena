@@ -18,13 +18,21 @@ public class StraightSword : Weapon
         Ray ray = GameManager.Instance.MainCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitRay;
 
+        Player player = dealer.GetComponent<Player>();
+
         //Debug.DrawRay(GameManager.Instance.MainCam.transform.position, ray.direction,Color.red);
         if(Physics.Raycast(ray,out hitRay,LayerMask.GetMask("Ground")))
         {
+            float dirX =  hitRay.point.x - dealer.transform.position.x;
+            _agentSpriteRenderer.FaceDirection(dirX,_weaponData.attackDelay);
+            player.AgentSprite.FaceDirection(dirX, _weaponData.attackDelay);
             vec = hitRay.point;
         }
         else
         {
+            float dirX = hitRay.point.x - dealer.transform.position.x;
+            _agentSpriteRenderer.FaceDirection(dirX, _weaponData.attackDelay);
+            player.AgentSprite.FaceDirection(dirX, _weaponData.attackDelay);
             return;
         }
 

@@ -8,12 +8,17 @@ public class Player : Unit
     private Weapon _weapon;
 
     private AgentMovement _agentMovement;
+    public AgentMovement AgentMovement => _agentMovement;
+
     [SerializeField]
     private string spriteRendererPath;
-    private AgentSpriteRenderer _agnetSpriteRenderer;
+    private AgentSpriteRenderer _agentSpriteRenderer;
+    public AgentSpriteRenderer AgentSprite => _agentSpriteRenderer;
+
     [SerializeField]
     private string animatorPath;
-    private AgentAnimation _agnetAnimator;
+    private AgentAnimation _agentAnimator;
+    public AgentAnimation AgentAnimator => _agentAnimator;
 
 
     #region Interface
@@ -21,7 +26,7 @@ public class Player : Unit
     {
         Debug.Log(gameObject.name + " : Dead");
         _agentMovement.MovementStopFlag();
-        _agnetSpriteRenderer.SpriteRendererFlag();
+        _agentSpriteRenderer.SpriteRendererFlag();
     }
 
     public override void OnGethit(int damaged, GameObject dealer)
@@ -54,8 +59,8 @@ public class Player : Unit
         _rigid = GetComponent<Rigidbody>();
         _weapon = transform.Find("Weapon").GetComponent<Weapon>();
         _agentMovement = GetComponent<AgentMovement>();
-        _agnetSpriteRenderer = transform.Find(spriteRendererPath).GetComponent<AgentSpriteRenderer>();
-        _agnetAnimator = transform.Find(animatorPath).GetComponent<AgentAnimation>();
+        _agentSpriteRenderer = transform.Find(spriteRendererPath).GetComponent<AgentSpriteRenderer>();
+        _agentAnimator = transform.Find(animatorPath).GetComponent<AgentAnimation>();
     }
 
     public void Attack()

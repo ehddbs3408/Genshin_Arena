@@ -25,6 +25,12 @@ public class AgentMovement : MonoBehaviour
         _rigid.velocity = vec * _movenetData.speed;
     }
 
+    public void Dash(Vector3 vec)
+    {
+        StopMovement(0.1f);
+        _rigid.AddForce(vec.normalized * _movenetData.dashPower,ForceMode.Impulse);
+    }
+
     public void StopMovement()
     {
         _rigid.velocity = Vector3.zero;

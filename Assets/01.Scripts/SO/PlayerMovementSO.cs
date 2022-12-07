@@ -7,4 +7,6 @@ public class PlayerMovementSO : ScriptableObject
 {
     [Range(0,10)]
     public float speed;
+
+    public float dashPower;
 }
