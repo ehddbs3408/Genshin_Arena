@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeUnit : Unit
+public class EnemyAnimation : AgentAnimation
 {
 
-    public override void OnDead()
-    {
-        
-    }
 }
