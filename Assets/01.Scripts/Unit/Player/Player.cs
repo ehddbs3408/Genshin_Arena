@@ -7,9 +7,6 @@ public class Player : Unit
     private Rigidbody _rigid;
     private Weapon _weapon;
 
-    private AgentMovement _agentMovement;
-    public AgentMovement AgentMovement => _agentMovement;
-
     [SerializeField]
     private string spriteRendererPath;
     private AgentSpriteRenderer _agentSpriteRenderer;
@@ -42,7 +39,7 @@ public class Player : Unit
 
     public override void OnGetStun(float power, float duration)
     {
-        float stunPower = power - unitData.stunResistance < 0 ? 0 : power - unitData.stunResistance;
+        float stunPower = power - _unitData.stunResistance < 0 ? 0 : power - _unitData.stunResistance;
         if(stunPower != 0)
         {
             duration = duration * (stunPower / 100.0f);
@@ -53,9 +50,9 @@ public class Player : Unit
     }
     #endregion
 
-    private void Awake()
+    protected override void Awake()
     {
-        Health = unitData.maxHp;
+        Health = _unitData.maxHp;
         _rigid = GetComponent<Rigidbody>();
         _weapon = transform.Find("Weapon").GetComponent<Weapon>();
         _agentMovement = GetComponent<AgentMovement>();

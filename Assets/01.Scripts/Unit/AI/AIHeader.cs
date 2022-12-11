@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class AIHeader : MonoBehaviour
 {
-    [field: SerializeField] public UnityEvent<Vector2> OnMovementKeyPress { get; set; }
-    [field: SerializeField] public UnityEvent<Vector2> OnPointerPositionChanged { get; set; }
+    [field: SerializeField] public UnityEvent<Vector3> OnMovementKeyPress { get; set; }
+    [field: SerializeField] public UnityEvent<Vector3> OnPointerPositionChanged { get; set; }
 
     [field: SerializeField] public UnityEvent OnFireButtonPress { get; set; }
     [field: SerializeField] public UnityEvent OnFireButtonRelease { get; set; }
@@ -39,7 +39,7 @@ public class AIHeader : MonoBehaviour
         OnFireButtonPress?.Invoke();
     }
 
-    public void Move(Vector2 moveDirection, Vector2 targetPosition)
+    public void Move(Vector3 moveDirection, Vector3 targetPosition)
     {
         OnMovementKeyPress?.Invoke(moveDirection);
         OnPointerPositionChanged?.Invoke(targetPosition);
