@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DistancDesision : AIDecision
+public class OutDistanceDecision : AIDecision
 {
     [Range(0.1f, 30f)]
     public float distance = 5f;
@@ -24,7 +24,7 @@ public class DistancDesision : AIDecision
             _aiActionData.targetSpotted = false;
         }
 
-        return _aiActionData.targetSpotted;
+        return !_aiActionData.targetSpotted;
 
     }
 

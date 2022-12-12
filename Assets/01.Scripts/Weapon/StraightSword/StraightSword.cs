@@ -51,9 +51,10 @@ public class StraightSword : Weapon
         clickPos = new Vector3(clickPos.x, 0, clickPos.z);
         enemyPos = new Vector3(enemyPos.x, 0, enemyPos.z);
         Vector3 dir =  clickPos - transform.position;
+        Vector3 distance = enemyPos - transform.position;
         float lookAngle = GetAngle(transform.position, clickPos);
 
-        if (dir.magnitude < _weaponData.attackRadius)
+        if (distance.magnitude < _weaponData.attackRadius)
         {
             //Vector3 rightDir = AngleToDir(lookAngle + _weaponData.attackAngle * 0.5f);
             //Vector3 leftDir = AngleToDir(lookAngle - _weaponData.attackAngle * 0.5f);
