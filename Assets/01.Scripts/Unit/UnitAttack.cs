@@ -9,7 +9,12 @@ public abstract class UnitAttack : MonoBehaviour
 
     protected bool _isAttackFlag = true;
 
-     protected virtual void OnAttack(IHittable hit)
+    protected virtual void Awake()
+    {
+        
+    }
+
+    protected virtual void OnAttack(IHittable hit)
     {
         if (_isAttackFlag == false) return;
 

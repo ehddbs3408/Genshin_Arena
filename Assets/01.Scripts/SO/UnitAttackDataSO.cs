@@ -10,6 +10,8 @@ public class UnitAttackDataSO : ScriptableObject
 
     [Range(0,100)]
     public int power;
+    [Range(0, 100)]
+    public float attackRange;
     public float stunTime;
     
 }

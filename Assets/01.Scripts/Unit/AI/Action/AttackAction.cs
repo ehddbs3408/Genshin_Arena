@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : AIAction
+public class AttackAction : AIAction
 {
     public override void TakeAction()
     {
@@ -13,6 +13,7 @@ public class MeleeAttack : AIAction
         _aimovementData.direction = Vector3.zero;
         _aimovementData.pointOfInterest = _enemyBrain.target.position;
         Debug.Log("Attack!");
+        _enemyBrain.Attack();
         _enemyBrain.Move(_aimovementData.direction, _aimovementData.pointOfInterest);
     }
 }
