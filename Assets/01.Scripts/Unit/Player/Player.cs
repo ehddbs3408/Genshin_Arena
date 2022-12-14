@@ -60,9 +60,8 @@ public class Player : Unit
         _agentAnimator = transform.Find(animatorPath).GetComponent<AgentAnimation>();
     }
 
-    public void Attack()
+    public override void OnAttack()
     {
         _weapon.OnAttack(gameObject);
-
     }
 }

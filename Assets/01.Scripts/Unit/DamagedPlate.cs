@@ -10,6 +10,7 @@ public class DamagedPlate : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
 
     private float _attackRange;
+    private float _attackDelay;
     private int _damage;
     private GameObject _dealer;
 
@@ -19,29 +20,46 @@ public class DamagedPlate : MonoBehaviour
     }
     private void Start()
     {
-        Init(10,1,null,LayerMask.GetMask("Enemy"));
+        Init(10,1,0.5f,null,LayerMask.GetMask("Player"));
     }
-    public void Init(float attackRange,int damege,GameObject dealer,LayerMask mask )
+    public void Init(float attackRange,int damege,float delay,GameObject dealer,LayerMask mask )
     {
-        gameObject.SetActive(false);
+        _spriteRenderer.enabled = false;
         _attackRange = attackRange;
         _damage = damege;
+        _attackDelay = delay;
         _dealer = dealer;
         _enemyMask = mask;
     }
 
     public void Attack()
     {
-        gameObject.SetActive(true);
+        StartCoroutine(AttackCroutine(_attackDelay));
+    }
+
+    private IEnumerator AttackCroutine(float duration)
+    {
+        VoidAttackRange(true);
+        yield return new WaitForSeconds(duration);
+        VoidAttackRange(false);
+        CheckColliderInEnemy();
+    }
+
+    private void CheckColliderInEnemy()
+    {
         Collider[] cols = Physics.OverlapSphere(transform.position, _attackRange);
-        foreach(Collider col in cols)
+        foreach (Collider col in cols)
         {
-            if(col.gameObject.layer == _enemyMask)
+            if (col.gameObject.layer == _enemyMask)
             {
                 IHittable hit = col.GetComponent<IHittable>();
                 hit.OnGethit(_damage, _dealer);
             }
         }
+    }
 
+    private void VoidAttackRange(bool value)
+    {
+        _spriteRenderer.enabled = value;
     }
 }

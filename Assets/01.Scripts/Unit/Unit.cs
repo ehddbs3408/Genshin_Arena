@@ -25,6 +25,7 @@ public abstract class Unit : MonoBehaviour, IHittable, IKnockBack, IStun
     public int Health { get; set; }
 
     public abstract void OnDead();
+    public abstract void OnAttack();
 
     public virtual void OnGethit(int damaged, GameObject dealer)
     {

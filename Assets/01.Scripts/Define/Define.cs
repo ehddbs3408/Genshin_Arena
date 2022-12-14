@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Define : MonoBehaviour
+public class Define
 {
-    // Start is called before the first frame update
-    void Start()
+    private static Camera _mainCam;
+    public static Camera MainCam
     {
-        
+        get
+        {
+            if(_mainCam == null)
+            {
+                _mainCam = Camera.main;
+            }
+            return _mainCam;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    public enum Scene
     {
-        
+        Unknown,
+        Lobby,
+        Game,
+    }
+    public enum Sound
+    {
+        Bgm,
+        Effect,
+        MaxCount,
     }
 }

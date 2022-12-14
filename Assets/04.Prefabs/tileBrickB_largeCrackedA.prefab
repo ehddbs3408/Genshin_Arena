@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8790341672586705696}
   - component: {fileID: 5643655440787633285}
   - component: {fileID: 7617484663548280911}
+  - component: {fileID: 7457703243693522898}
   m_Layer: 6
   m_Name: tileBrickB_largeCrackedA
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7457703243693522898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8265866188566274458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 1, z: 6}
+  m_Center: {x: 0, y: 0.5, z: 0}

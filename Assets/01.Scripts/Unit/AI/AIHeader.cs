@@ -26,7 +26,7 @@ public class AIHeader : MonoBehaviour
     }
     private void Start()
     {
-        target = GameManager.Instance.PlayerTrm;
+        target = Managers.PlayerTrm;
     }
 
     public void SetAttackState(bool state)

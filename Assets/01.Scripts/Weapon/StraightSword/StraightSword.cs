@@ -15,7 +15,7 @@ public class StraightSword : Weapon
         Collider[] cols = Physics.OverlapSphere(transform.position, _weaponData.attackRadius, mask);
 
         Vector3 vec = Vector3.zero;
-        Ray ray = GameManager.Instance.MainCam.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Define.MainCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitRay;
 
         Player player = dealer.GetComponent<Player>();
@@ -44,7 +44,7 @@ public class StraightSword : Weapon
                 hit?.OnGethit(10, gameObject);
                 IKnockBack knockBack = col.gameObject.GetComponent<IKnockBack>();
                 Vector3 dir = col.gameObject.transform.position - transform.position;
-                knockBack?.OnGetKnockBack(dir, 100, 10, gameObject);
+                knockBack?.OnGetKnockBack(dir, 20, 10, gameObject);
             }
         }
     }
