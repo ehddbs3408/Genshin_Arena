@@ -42,6 +42,9 @@ public class StraightSword : Weapon
             {
                 IHittable hit = col.gameObject.GetComponent<IHittable>();
                 hit?.OnGethit(10, gameObject);
+                IKnockBack knockBack = col.gameObject.GetComponent<IKnockBack>();
+                Vector3 dir = col.gameObject.transform.position - transform.position;
+                knockBack?.OnGetKnockBack(dir, 100, 10, gameObject);
             }
         }
     }

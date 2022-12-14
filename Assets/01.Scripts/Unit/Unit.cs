@@ -57,7 +57,11 @@ public abstract class Unit : MonoBehaviour, IHittable, IKnockBack, IStun
 
     public virtual void OnGetKnockBack(Vector3 dir, float power, float duration, GameObject dealer = null)
     {
-
+        Debug.Log("KnockBack");
+        //_agentMovement.StopMovement(duration);
+        Vector3 vec = new Vector3(dir.x, 0, dir.z);
+        _agentMovement.Dash(vec, power);
+        
     }
 
     public virtual void OnGetStun(float power, float duration)
