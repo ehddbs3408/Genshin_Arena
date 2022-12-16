@@ -7,9 +7,12 @@ public class CameraMove : MonoBehaviour
 {
     private Transform _target;
 
+    [SerializeField]
+    private float _myRotationX;
     private void Awake()
     {
         _target = GameObject.Find("Player").GetComponent<Transform>();
+       
     }
 
     private void Update()
@@ -22,6 +25,6 @@ public class CameraMove : MonoBehaviour
         Vector3 targetDir = _target.position - transform.position;
         float angle = Quaternion.FromToRotation(Vector3.forward, targetDir).eulerAngles.y;
 
-        transform.rotation = Quaternion.Euler(35, angle, 0);
+        transform.rotation = Quaternion.Euler(_myRotationX, angle, 0);
     }
 }
