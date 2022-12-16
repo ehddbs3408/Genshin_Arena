@@ -25,6 +25,17 @@ public class AgentMovement : MonoBehaviour
         _rigid.velocity = vec * _movenetData.speed;
     }
 
+    public void Dash(Vector3 vec)
+    {
+        StopMovement(0.1f);
+        _rigid.AddForce(vec.normalized * _movenetData.dashPower,ForceMode.Impulse);
+    }
+    public void Dash(Vector3 vec,float power)
+    {
+        StopMovement(0.1f);
+        _rigid.AddForce(vec.normalized * power, ForceMode.Impulse);
+    }
+
     public void StopMovement()
     {
         _rigid.velocity = Vector3.zero;
@@ -44,8 +55,8 @@ public class AgentMovement : MonoBehaviour
     private IEnumerator MovementStopDuration(float duration)
     {
         _isStop = true;
-        yield return new WaitForSeconds(duration);
         _rigid.velocity = Vector3.zero;
+        yield return new WaitForSeconds(duration);
         _isStop = false;
     }
 }

@@ -7,13 +7,15 @@ public class Player : Unit
     private Rigidbody _rigid;
     private Weapon _weapon;
 
-    private AgentMovement _agentMovement;
     [SerializeField]
     private string spriteRendererPath;
-    private AgentSpriteRenderer _agnetSpriteRenderer;
+    private AgentSpriteRenderer _agentSpriteRenderer;
+    public AgentSpriteRenderer AgentSprite => _agentSpriteRenderer;
+
     [SerializeField]
     private string animatorPath;
-    private AgentAnimation _agnetAnimator;
+    private AgentAnimation _agentAnimator;
+    public AgentAnimation AgentAnimator => _agentAnimator;
 
 
     #region Interface
@@ -21,7 +23,7 @@ public class Player : Unit
     {
         Debug.Log(gameObject.name + " : Dead");
         _agentMovement.MovementStopFlag();
-        _agnetSpriteRenderer.SpriteRendererFlag();
+        _agentSpriteRenderer.SpriteRendererFlag();
     }
 
     public override void OnGethit(int damaged, GameObject dealer)
@@ -37,7 +39,7 @@ public class Player : Unit
 
     public override void OnGetStun(float power, float duration)
     {
-        float stunPower = power - unitData.stunResistance < 0 ? 0 : power - unitData.stunResistance;
+        float stunPower = power - _unitData.stunResistance < 0 ? 0 : power - _unitData.stunResistance;
         if(stunPower != 0)
         {
             duration = duration * (stunPower / 100.0f);
@@ -48,19 +50,18 @@ public class Player : Unit
     }
     #endregion
 
-    private void Awake()
+    protected override void Awake()
     {
-        Health = unitData.maxHp;
+        Health = _unitData.maxHp;
         _rigid = GetComponent<Rigidbody>();
         _weapon = transform.Find("Weapon").GetComponent<Weapon>();
         _agentMovement = GetComponent<AgentMovement>();
-        _agnetSpriteRenderer = transform.Find(spriteRendererPath).GetComponent<AgentSpriteRenderer>();
-        _agnetAnimator = transform.Find(animatorPath).GetComponent<AgentAnimation>();
+        _agentSpriteRenderer = transform.Find(spriteRendererPath).GetComponent<AgentSpriteRenderer>();
+        _agentAnimator = transform.Find(animatorPath).GetComponent<AgentAnimation>();
     }
 
-    public void Attack()
+    public override void OnAttack()
     {
         _weapon.OnAttack(gameObject);
-
     }
 }

@@ -34,7 +34,6 @@ public abstract class Weapon : MonoBehaviour
     public void WeaponVisualFilp(float dir)
     {
         _agentSpriteRenderer.FaceDirection(new Vector3(dir, 0, 0));
-
     }
 
     public void EquipWeapon(Transform parent)

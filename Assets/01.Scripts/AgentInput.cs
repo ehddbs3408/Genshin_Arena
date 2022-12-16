@@ -11,15 +11,31 @@ public class AgentInput : MonoBehaviour
     [SerializeField]
     UnityEvent OnAttackKeyInput;
 
+    [SerializeField]
+    UnityEvent<Vector3> OnDashkeyInput;
+
     private void Update()
+    {
+        MoveInput();
+        AttackInput();
+    }
+    private void AttackInput()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            OnAttackKeyInput?.Invoke();
+        }
+    }
+
+    private void MoveInput()
     {
         Vector3 vec = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         OnMoveKeyInput?.Invoke(vec);
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            OnAttackKeyInput?.Invoke();
+            OnDashkeyInput?.Invoke(vec);
         }
     }
 }

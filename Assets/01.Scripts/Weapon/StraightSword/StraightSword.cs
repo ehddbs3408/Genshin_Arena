@@ -15,16 +15,24 @@ public class StraightSword : Weapon
         Collider[] cols = Physics.OverlapSphere(transform.position, _weaponData.attackRadius, mask);
 
         Vector3 vec = Vector3.zero;
-        Ray ray = GameManager.Instance.MainCam.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Define.MainCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitRay;
+
+        Player player = dealer.GetComponent<Player>();
 
         //Debug.DrawRay(GameManager.Instance.MainCam.transform.position, ray.direction,Color.red);
         if(Physics.Raycast(ray,out hitRay,LayerMask.GetMask("Ground")))
         {
+            float dirX =  hitRay.point.x - dealer.transform.position.x;
+            _agentSpriteRenderer.FaceDirection(dirX,_weaponData.attackDelay);
+            player.AgentSprite.FaceDirection(dirX, _weaponData.attackDelay);
             vec = hitRay.point;
         }
         else
         {
+            float dirX = hitRay.point.x - dealer.transform.position.x;
+            _agentSpriteRenderer.FaceDirection(dirX, _weaponData.attackDelay);
+            player.AgentSprite.FaceDirection(dirX, _weaponData.attackDelay);
             return;
         }
 
@@ -34,6 +42,9 @@ public class StraightSword : Weapon
             {
                 IHittable hit = col.gameObject.GetComponent<IHittable>();
                 hit?.OnGethit(10, gameObject);
+                IKnockBack knockBack = col.gameObject.GetComponent<IKnockBack>();
+                Vector3 dir = col.gameObject.transform.position - transform.position;
+                knockBack?.OnGetKnockBack(dir, 20, 10, gameObject);
             }
         }
     }
@@ -43,9 +54,10 @@ public class StraightSword : Weapon
         clickPos = new Vector3(clickPos.x, 0, clickPos.z);
         enemyPos = new Vector3(enemyPos.x, 0, enemyPos.z);
         Vector3 dir =  clickPos - transform.position;
+        Vector3 distance = enemyPos - transform.position;
         float lookAngle = GetAngle(transform.position, clickPos);
 
-        if (dir.magnitude < _weaponData.attackRadius)
+        if (distance.magnitude < _weaponData.attackRadius)
         {
             //Vector3 rightDir = AngleToDir(lookAngle + _weaponData.attackAngle * 0.5f);
             //Vector3 leftDir = AngleToDir(lookAngle - _weaponData.attackAngle * 0.5f);

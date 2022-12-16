@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Movement
   m_EditorClassIdentifier: 
   speed: 5.78
+  dashPower: 20
