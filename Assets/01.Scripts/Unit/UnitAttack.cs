@@ -18,7 +18,7 @@ public abstract class UnitAttack : MonoBehaviour
         _damagedPlate = transform.Find("Plate").GetComponent<DamagedPlate>();
     }
 
-    protected virtual void OnAttack(IHittable hit)
+    public virtual void OnAttack()
     {
         if (_isAttackFlag == false) return;
 

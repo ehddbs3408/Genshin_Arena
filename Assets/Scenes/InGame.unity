@@ -6577,7 +6577,8 @@ GameObject:
   - component: {fileID: 1079283658}
   - component: {fileID: 1079283656}
   - component: {fileID: 1079283655}
-  m_Layer: 0
+  - component: {fileID: 1079283659}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6789,6 +6790,19 @@ MonoBehaviour:
   _isActive: 1
   spriteRendererPath: VisualSprite
   animatorPath: VisualSprite
+--- !u!65 &1079283659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079283653}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9658408, y: 1.5887873, z: 0.6825657}
+  m_Center: {x: 0.017079577, y: 0.513438, z: -0.045532227}
 --- !u!1 &1119129833
 GameObject:
   m_ObjectHideFlags: 0
@@ -7234,13 +7248,13 @@ MonoBehaviour:
   <OnFireButtonPress>k__BackingField:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1279505118}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1279505125}
+        m_TargetAssemblyTypeName: UnitAttack, Assembly-CSharp
+        m_MethodName: OnAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7267,7 +7281,7 @@ MonoBehaviour:
   _attackDataSO: {fileID: 11400000, guid: a53e8779fbfa0004690ed496ded73fee, type: 2}
   _enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!1 &1291071708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7938,7 +7952,7 @@ GameObject:
   - component: {fileID: 1652963628}
   - component: {fileID: 1652963629}
   - component: {fileID: 1652963631}
-  - component: {fileID: 1652963630}
+  - component: {fileID: 1652963632}
   m_Layer: 7
   m_Name: Plate
   m_TagString: Untagged
@@ -7953,14 +7967,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652963627}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0.487}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1279505119}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1652963629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7973,19 +7987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d979302e5603fef4098fd758451e79b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1652963630
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652963627}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.11233461, z: 1}
-  m_Center: {x: 0, y: -0.4438327, z: 0}
 --- !u!212 &1652963631
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8027,17 +8028,30 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1652963632
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652963627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.20000005, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1668177206
 PrefabInstance:
   m_ObjectHideFlags: 0
