@@ -11,7 +11,7 @@ public class StraightSword : Weapon
     LayerMask mask;
     public override void OnAttack(GameObject dealer)
     {
-        mask = LayerMask.GetMask("Unit");
+        mask = LayerMask.GetMask("Enemy");
         Collider[] cols = Physics.OverlapSphere(transform.position, _weaponData.attackRadius, mask);
 
         Vector3 vec = Vector3.zero;
