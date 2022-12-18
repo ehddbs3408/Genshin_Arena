@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1010469353794949301}
   - component: {fileID: 1010469353794949300}
   m_Layer: 0
-  m_Name: slash-white black bolder
+  m_Name: slash-white-red-bolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010469353794949299}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 0f901513bda8d474cbf7d961decd7a7e, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 9091535ada8b39c4c89c94e94cc98ae1, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3662496979572467538}
   m_Layer: 0
-  m_Name: white-black bolder
+  m_Name: white-pupple bolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
