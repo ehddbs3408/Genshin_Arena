@@ -9,21 +9,18 @@ public abstract class UnitAttack : MonoBehaviour
     [SerializeField]
     protected LayerMask _enemyLayer;
 
-    protected DamagedPlate _damagedPlate;
-
     protected bool _isAttackFlag = true;
 
     protected virtual void Awake()
     {
-        _damagedPlate = transform.Find("Plate").GetComponent<DamagedPlate>();
     }
 
     public virtual void OnAttack()
     {
         if (_isAttackFlag == false) return;
 
-        //hit.OnGethit(_attackDataSO.damage, gameObject);
-        _damagedPlate.Init(_attackDataSO.attackRange, _attackDataSO.damage, _attackDataSO.attackDelay, gameObject, _enemyLayer,transform.position);
+        IHittable hit = Managers.PlayerTrm.GetComponent<IHittable>();
+        hit.OnGethit(_attackDataSO.damage, gameObject);
         StartCoroutine(AttackDelay(_attackDataSO.attackDelay));
     }
 
