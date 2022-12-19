@@ -23,7 +23,12 @@ public class Spawner : MonoBehaviour
 
     private float _timer;
 
-    public void SpawnGruop(string gruopName)
+    private void Awake()
+    {
+        _currentSpawnData = _spawnEnemyList[0];
+    }
+
+    public void SetSpawnGruop(string gruopName)
     {
         foreach(SpawnData data in _spawnEnemyList)
         {
@@ -36,9 +41,21 @@ public class Spawner : MonoBehaviour
 
         Debug.LogError("Not Found Enemy Group");
     }
-    public void SpawnEnemy()
+    public void SpawnEnemy(bool oneSpawn)
     {
-
+        if(oneSpawn)
+        {
+            int idx = UnityEngine.Random.Range(0, _spawnPosList.Count);
+            SpawnPointEnemy(idx);
+        }
+        else
+        {
+            for (int i = 0; i < _spawnPosList.Count; i++)
+            {
+                SpawnPointEnemy(i);
+            }
+        }
+        
     }
     public void SpawnPointEnemy(int posIdx)
     {
