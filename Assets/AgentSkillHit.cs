@@ -19,7 +19,7 @@ public class AgentSkillHit : MonoBehaviour
     
     void ShowDamagePopup()
     {
-        var go = Instantiate(DamagePopupPrefab,transform.position, Quaternion.identity, transform);
-        go.GetComponent<TextMesh>().text = PlayerAbility.Power.ToString();
+        GameObject go = Managers.Resource.Instantiate("DamagePopup",transform);
+        go.GetComponent<TextMesh>().text = PlayerAbility.swordPower.ToString();
     }
 }

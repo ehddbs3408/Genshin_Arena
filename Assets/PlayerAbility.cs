@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAbility : MonoBehaviour
 {
 
-    public static int Power = 100;
+    public static int swordPower = 100;
 
     void Start()
     {

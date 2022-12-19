@@ -6,12 +6,23 @@ using DG.Tweening;
 public class DamagePopupText : MonoBehaviour
 {
 
-    private float Destroytime = 0.5f;
-
-
-
-    void Start()
+    private void Start()
     {
-        Destroy(gameObject,Destroytime);
+        Init();
+    }
+
+    void Init()
+    {
+        Sequence seq = DOTween.Sequence();
+        seq.Append(transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1));
+        seq.Join(transform.DOMoveY(5f, 1));
+        seq.AppendCallback(() => Die());
+
+
+    }
+
+    public void Die()
+    {
+        Managers.Resource.Destroy(this.gameObject);
     }
 }
