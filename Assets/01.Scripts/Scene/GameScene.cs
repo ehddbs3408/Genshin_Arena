@@ -24,6 +24,11 @@ public class GameScene : BaseScene
         //List.RemoveAt(0);
         //게임 시작시
     }
+    public void GameOver()
+    {
+        Debug.Log("GameOver");
+        Managers.Scene.LoadScene(Define.Scene.Lobby);
+    }
     public override void Clear()
     {
 

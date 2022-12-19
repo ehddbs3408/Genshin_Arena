@@ -15,6 +15,8 @@ public class EnemyAnimation : AgentAnimation
 {
     SkeletonAnimation monsterAnimator;
 
+    private bool _isFace = false;
+
     private AnimatorState _currentState = AnimatorState.None;
     protected override void Awake()
     {
@@ -40,6 +42,22 @@ public class EnemyAnimation : AgentAnimation
     {
         _currentState = AnimatorState.Dead;
         ChangeAnimation("Dead", false);
+    }
+    public void FaceDirection(Vector3 vec)
+    {
+        float dir = vec.x;
+        if(dir > 0)
+        {
+            _isFace = true;
+        }
+        else
+        {
+            _isFace = false;
+        }
+        Vector3 size = transform.localScale;
+        size.x = _isFace ? 0.5f : -0.5f;
+        transform.localScale = size;
+
     }
     public void ChangeAnimation(string AnimationName,bool loop)  //Names are: Idle, Walk, Dead and Attack
     {
