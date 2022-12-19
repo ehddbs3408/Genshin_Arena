@@ -55,16 +55,41 @@ public class WeaponSkill : MonoBehaviour
     [SerializeField] VisualEffect fivestarspearskillfive;
     [SerializeField] VisualEffect fivestarspearskillsix;
 
-    VisualEffect nowweapon;
+    [SerializeField] GameObject onestarswordcol;
+    [SerializeField] GameObject onestarspearcol;
+    [SerializeField] GameObject twostarswordcol;
+    [SerializeField] GameObject twostarspearcol;
+    [SerializeField] GameObject threestarswordcol;
+    [SerializeField] GameObject threestarspearcol;
+    [SerializeField] GameObject fourstarswordcol;
+    [SerializeField] GameObject fourstarspearcol;
+    [SerializeField] GameObject fivestarswordcol;
+    [SerializeField] GameObject fivestarspearcol;
+
+
+    public static int weaponskillnum = 1;
 
     WaitForSeconds a = new WaitForSeconds(0.1f);
-    WaitForSeconds b = new WaitForSeconds(0.06f);
 
     private float skillcooltime = 0f;
-    private int count = 0;
+    private float nowskillcooltime = 0f;
+    private float swordcooltime = 5f;
+    private float spearcooltime = 1f;
+
+    
 
     public void Start()
     {
+
+        if (weaponskillnum / 2 == 0)
+        {
+            nowskillcooltime = spearcooltime;
+        }
+        else if(weaponskillnum / 2 != 0)
+        {
+            nowskillcooltime = swordcooltime;
+        }
+
         onestarswordskill.Stop();
 
         onestarspearskill.Stop();
@@ -93,6 +118,7 @@ public class WeaponSkill : MonoBehaviour
         fourstarswordskillsix.Stop();
         fourstarswordskillseven.Stop();
 
+
         fourstarspearskillfirst.Stop();
         fourstarspearskillsecond.Stop();
         fourstarspearskillthree.Stop();
@@ -107,6 +133,7 @@ public class WeaponSkill : MonoBehaviour
         fivestarswordskillfive.Stop();
         fivestarswordskillsix.Stop();
         fivestarswordskillseven.Stop();
+        
 
         fivestarspearskillfirst.Stop();
         fivestarspearskillsecond.Stop();
@@ -119,41 +146,102 @@ public class WeaponSkill : MonoBehaviour
     }
 
 
-
     public void Update()
     {
         skillcooltime += Time.deltaTime;
-        if (skillcooltime > 0.7f)
+        if (skillcooltime > nowskillcooltime)
         {
+            
             if (Input.GetKeyDown(KeyCode.X))
             {
-                StartCoroutine(fourstarspearskillfunc());
+                if (AgentSpriteRenderer._isflip == false)
+                {
+                    transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else if(AgentSpriteRenderer._isflip == true)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+
+                switch (weaponskillnum)
+                {
+                    case 1:
+                        StartCoroutine(onestarswordskillfunc());
+                        break;
+                    case 2:
+                        StartCoroutine(onestarspearskillfunc());
+                        break;
+                    case 3:
+                        StartCoroutine(twostarswordskillfunc());
+                        break;
+                    case 4:
+                        StartCoroutine(twostarspearskillfunc());
+                        break;
+                    case 5:
+                        StartCoroutine(threestarswordskillfunc());
+                        break;
+                    case 6:
+                        StartCoroutine(threestarspearskillfunc());
+                        break;
+                    case 7:
+                        StartCoroutine(fourstarswordskillfunc());
+                        break;
+                    case 8:
+                        StartCoroutine(fourstarspearskillfunc());
+                        break;
+                    case 9:
+                        StartCoroutine(fivestarswordskillfunc());
+                        break;
+                    case 10:
+                        StartCoroutine(fivestarspearskillfunc());
+                        break;
+                }
                 skillcooltime = 0f;
             }
             
         }
     }
 
+    IEnumerator onestarswordskillfunc()
+    {
+        onestarswordcol.SetActive(true);
+        onestarswordskill.Play();
+        yield return a;
+        onestarswordcol.SetActive(false);
+    }
+
+    IEnumerator onestarspearskillfunc()
+    {
+        onestarspearcol.SetActive(true);
+        onestarspearskill.Play();
+        yield return a;
+        onestarspearcol.SetActive(false);
+    }
+
     IEnumerator twostarswordskillfunc()
     {
+        twostarswordcol.SetActive(true);
         twostarswordskillfirst.Play();
         yield return a;
         twostarswordskillsecond.Play();
         yield return a;
         twostarswordskillthird.Play();
+        twostarswordcol.SetActive(false);
     }
 
     IEnumerator twostarspearskillfunc()
     {
-            
+        twostarspearcol.SetActive(true);
         twostarspearskillfirst.Play();
-        yield return b;
+        yield return a;
         twostarspearskillsecond.Play();
+        twostarspearcol.SetActive(false);
 
     }
 
     IEnumerator threestarswordskillfunc()
     {
+        threestarswordcol.SetActive(true);
         threestarswordskillfirst.Play();
         yield return a;
         threestarswordskillsecond.Play();
@@ -161,24 +249,26 @@ public class WeaponSkill : MonoBehaviour
         threestarswordskillthree.Play();
         yield return a;
         threestarswordskillfour.Play();
+        threestarswordcol.SetActive(false);
         
     }
     
     IEnumerator threestarspearskillfunc()
     {
-        
+        threestarspearcol.SetActive(true);
             threestarspearskillfirst.Play();
-            yield return b;
+            yield return a;
             threestarspearskillsecond.Play();
-            yield return b;
+            yield return a;
             threestarspearskillthree.Play();
-            yield return b;
-        
-        
+            yield return a;
+        threestarspearcol.SetActive(false);
+
     }
 
     IEnumerator fourstarswordskillfunc()
     {
+        fourstarswordcol.SetActive(true);
         fourstarswordskillfirst.Play();
         yield return a;
         fourstarswordskillsecond.Play();
@@ -190,26 +280,30 @@ public class WeaponSkill : MonoBehaviour
         fourstarswordskillfive.Play();
         fourstarswordskillsix.Play();
         fourstarswordskillseven.Play();
+        fourstarswordcol.SetActive(false);
 
     }
 
     IEnumerator fourstarspearskillfunc()
     {
+        fourstarspearcol.SetActive(true);
         fourstarspearskillfirst.Play();
-        yield return b;
+        yield return a;
         fourstarspearskillsecond.Play();
-        yield return b;
+        yield return a;
         fourstarspearskillthree.Play();
-        yield return b;
+        yield return a;
         fourstarspearskillfour.Play();
-        yield return b;
+        yield return a;
         fourstarspearskillfive.Play();
-        yield return b;
+        yield return a;
         fourstarspearskillsix.Play();
+        fourstarspearcol.SetActive(false);
     }
 
     IEnumerator fivestarswordskillfunc()
     {
+        fivestarswordcol.SetActive(true);
         fivestarswordskillfirst.Play();
         yield return a;
         fivestarswordskillsecond.Play();
@@ -221,21 +315,24 @@ public class WeaponSkill : MonoBehaviour
         fivestarswordskillfive.Play();
         fivestarswordskillsix.Play();
         fivestarswordskillseven.Play();
+        fivestarswordcol.SetActive(false);
     }
 
     IEnumerator fivestarspearskillfunc()
     {
+        fivestarspearcol.SetActive(true);
         fivestarspearskillfirst.Play();
-        yield return b;
+        yield return a;
         fivestarspearskillsecond.Play();
-        yield return b;
+        yield return a;
         fivestarspearskillthree.Play();
-        yield return b;
+        yield return a;
         fivestarspearskillfour.Play();
-        yield return b;
+        yield return a;
         fivestarspearskillfive.Play();
-        yield return b;
+        yield return a;
         fivestarspearskillsix.Play();
+        fivestarspearcol.SetActive(false);
     }
 
 
