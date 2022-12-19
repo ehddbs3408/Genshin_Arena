@@ -13,10 +13,12 @@ public class Managers : MonoBehaviour
     PoolManager _pool = new PoolManager();
     SceneManagerEX _scene = new SceneManagerEX();
     ResourceManagers _resource = new ResourceManagers();
+    TimeManager _time = new TimeManager();
     //Property
     public static PoolManager Pool { get { return Instance._pool; } }
     public static SceneManagerEX Scene { get { return Instance._scene; } }
     public static ResourceManagers Resource { get { return Instance._resource; } }
+    public static  TimeManager TimeMa { get { return Instance._time; } }
     #endregion
 
     #region Object
@@ -53,7 +55,12 @@ public class Managers : MonoBehaviour
             instance = go.GetComponent<Managers>();
 
             instance._pool.Init();
+            instance._time.Init();
         }
+    }
+    private void Update()
+    {
+        instance._time.OnUpdate(Time.deltaTime);
     }
     static void Clear()
     {
