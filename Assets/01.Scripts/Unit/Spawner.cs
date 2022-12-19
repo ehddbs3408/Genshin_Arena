@@ -19,13 +19,18 @@ public class Spawner : MonoBehaviour
 
     private SpawnData _currentSpawnData;
 
-    private int _spawnIdx;
+    private int _spawnEnemyCount;
+    public int SpawnEnemyCount => _spawnEnemyCount;
 
-    private float _timer;
 
     private void Awake()
     {
         _currentSpawnData = _spawnEnemyList[0];
+        _spawnEnemyCount = 0;
+    }
+    private void Update()
+    {
+        CheckSpawnEnemy();
     }
 
     public void SetSpawnGruop(string gruopName)
@@ -65,6 +70,13 @@ public class Spawner : MonoBehaviour
 
         GameObject go = Managers.Resource.Instantiate(path);
         go.transform.position = _spawnPosList[posIdx].position;
+        go.transform.SetParent(gameObject.transform);
         go.SetActive(true);
+    }
+
+    public void CheckSpawnEnemy()
+    {
+        _spawnEnemyCount = transform.childCount;
+        Debug.Log(_spawnEnemyCount);
     }
 }
