@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerState
   m_EditorClassIdentifier: 
   maxHp: 100
-  maxStamina: 1000
+  maxStamina: 100
   stunResistance: 50
   knockBackResistance: 50

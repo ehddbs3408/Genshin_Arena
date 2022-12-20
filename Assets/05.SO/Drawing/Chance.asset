@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee13d784f86f0e4eb63079ded7ccc20, type: 3}
+  m_Name: Chance
+  m_EditorClassIdentifier: 
+  oneStartPossibility: 100
+  twoStartPossibility: 29
+  threeStartPossibility: 10.5
+  fourStartPossibility: 4
+  fiveStartPossibility: 0.1

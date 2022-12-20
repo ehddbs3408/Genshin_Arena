@@ -17,6 +17,10 @@ public class Player : Unit
     private AgentAnimation _agentAnimator;
     public AgentAnimation AgentAnimator => _agentAnimator;
 
+    private StaminaBar _staminaBar;
+    private float _maxStamina;
+    private float _stamina;
+
 
     #region Interface
     public override void OnDead()
@@ -58,6 +62,30 @@ public class Player : Unit
         _agentMovement = GetComponent<AgentMovement>();
         _agentSpriteRenderer = transform.Find(spriteRendererPath).GetComponent<AgentSpriteRenderer>();
         _agentAnimator = transform.Find(animatorPath).GetComponent<AgentAnimation>();
+
+        _staminaBar = transform.Find("StaminaBar").GetComponent<StaminaBar>();
+        _maxStamina = _stamina =_unitData.maxStamina ;
+    }
+
+    private void Update()
+    {
+        StaminaHealth();
+    }
+
+    public void StaminaHealth()
+    {
+        _stamina += Time.deltaTime * 10;
+        _stamina = _stamina >= _maxStamina ? _maxStamina : _stamina;
+        _staminaBar.ChangeStaminaBar(_stamina / _maxStamina);
+    }
+
+    public void Dash(Vector3 vec)
+    {
+        if (_stamina < 20) return;
+
+        _stamina = _stamina - 20 > 0 ? _stamina - 20 : 0;
+        _staminaBar.ChangeStaminaBar(_stamina / _maxStamina);
+        _agentMovement.Dash(vec,20);
     }
 
     public override void OnAttack()
