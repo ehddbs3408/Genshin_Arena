@@ -10,13 +10,16 @@ public class AgentMovement : MonoBehaviour
     [SerializeField]
     private string rigidbodyPath;
     private Rigidbody _rigid;
-    
+
+    private float Playerspeed;
 
     private bool _isStop = false;
     private bool _stopFlag = false;
+    public static bool _isskillplaying = false;
     private void Awake()
     {
         _rigid = transform.Find(rigidbodyPath).GetComponent<Rigidbody>();
+        Playerspeed = _movenetData.speed;
     }
 
     public void Movement(Vector3 vec)
@@ -58,5 +61,19 @@ public class AgentMovement : MonoBehaviour
         _rigid.velocity = Vector3.zero;
         yield return new WaitForSeconds(duration);
         _isStop = false;
+    }
+    
+    public void Stop()
+    {
+        _movenetData.speed = 0f;
+        _isskillplaying = true;
+
+    }
+
+    public void Play()
+    {
+        _movenetData.speed = Playerspeed;
+        _isskillplaying = false;
+
     }
 }

@@ -33,7 +33,7 @@ public class AgentInput : MonoBehaviour
 
         OnMoveKeyInput?.Invoke(vec);
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && AgentMovement._isskillplaying == false)
         {
             OnDashkeyInput?.Invoke(vec);
         }

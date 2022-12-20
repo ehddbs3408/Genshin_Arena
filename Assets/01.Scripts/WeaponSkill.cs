@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using UnityEngine.Playables;
 
 public class WeaponSkill : MonoBehaviour
 {
@@ -66,15 +67,17 @@ public class WeaponSkill : MonoBehaviour
     [SerializeField] GameObject fivestarswordcol;
     [SerializeField] GameObject fivestarspearcol;
 
+    [SerializeField] PlayableDirector playableDirector;
 
-    public static int weaponskillnum = 1;
+
+    public static int weaponskillnum = 9;
 
     WaitForSeconds a = new WaitForSeconds(0.1f);
 
     private float skillcooltime = 0f;
     private float nowskillcooltime = 0f;
-    private float swordcooltime = 5f;
-    private float spearcooltime = 1f;
+    private float swordcooltime = 1f;
+    private float spearcooltime = 0.5f;
 
     
 
@@ -151,7 +154,14 @@ public class WeaponSkill : MonoBehaviour
         skillcooltime += Time.deltaTime;
         if (skillcooltime > nowskillcooltime)
         {
-            
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                if(weaponskillnum == 9 || weaponskillnum == 10)
+                {
+                    playableDirector.Play();
+                }
+            }
+
             if (Input.GetKeyDown(KeyCode.X))
             {
                 if (AgentSpriteRenderer._isflip == false)
