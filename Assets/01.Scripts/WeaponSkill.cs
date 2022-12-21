@@ -67,10 +67,11 @@ public class WeaponSkill : MonoBehaviour
     [SerializeField] GameObject fivestarswordcol;
     [SerializeField] GameObject fivestarspearcol;
 
-    [SerializeField] PlayableDirector playableDirector;
+    [SerializeField] PlayableDirector swordplayableDirector;
+    [SerializeField] PlayableDirector spearplayabledirector;
 
 
-    public static int weaponskillnum = 9;
+    public static int weaponskillnum = 10;
 
     WaitForSeconds a = new WaitForSeconds(0.1f);
 
@@ -156,9 +157,13 @@ public class WeaponSkill : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                if(weaponskillnum == 9 || weaponskillnum == 10)
+                if(weaponskillnum == 9)
                 {
-                    playableDirector.Play();
+                    swordplayableDirector.Play();
+                }
+                else if(weaponskillnum == 10)
+                {
+                    spearplayabledirector.Play();
                 }
             }
 

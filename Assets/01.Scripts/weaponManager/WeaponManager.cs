@@ -17,4 +17,28 @@ public class WeaponManager : MonoBehaviour
         SceneManager.LoadScene("SkillEffect");
     }
 
+    public void Gacha()
+    {
+        WeaponJsonData weaponjsondata = new WeaponJsonData();
+        WeaponCnt weaponcnt = new WeaponCnt();
+        weaponcnt.name = "Âû³ªÀÇ µ¡¾ø´Â »î";
+        weaponcnt.count = 1;
+        weaponjsondata.list.Add(weaponcnt);
+        
+        //weaponcnt.name = ""
+        
+        string json = DataManager.ObjectToJson(weaponjsondata);
+
+        DataManager.SaveJsonFile("SAVE/Weapon", "weapon", json);
+
+        WeaponJsonData wjdata = DataManager.LoadJsonFile<WeaponJsonData>("SAVE/Weapon", "weapon");
+        foreach(WeaponCnt cn in wjdata.list)
+        {
+            if(cn.name == "Âû³ªÀÇ µ¡¾ø´Â »î")
+            {
+
+            }
+        }
+
+    }
 }
