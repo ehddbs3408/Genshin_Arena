@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 
 [Serializable]
-
 public class Jeareon
 {
     public int reforgestarlevel;
