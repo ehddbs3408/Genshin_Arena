@@ -435,6 +435,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 223973601}
     m_Modifications:
+    - target: {fileID: 7478297351284286726, guid: 1439e777a4f98f9478e6b1ed5d22c29c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120202271}
+    - target: {fileID: 7478297351284286726, guid: 1439e777a4f98f9478e6b1ed5d22c29c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DrawingMotion
+      objectReference: {fileID: 0}
     - target: {fileID: 7478297352280480051, guid: 1439e777a4f98f9478e6b1ed5d22c29c, type: 3}
       propertyPath: m_Name
       value: DrawingWaeponPanel
@@ -522,6 +530,14 @@ PrefabInstance:
     - target: {fileID: 7478297352280480060, guid: 1439e777a4f98f9478e6b1ed5d22c29c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478297352393935578, guid: 1439e777a4f98f9478e6b1ed5d22c29c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120202271}
+    - target: {fileID: 7478297352393935578, guid: 1439e777a4f98f9478e6b1ed5d22c29c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SkipExit
       objectReference: {fileID: 0}
     - target: {fileID: 7478297352393935582, guid: 1439e777a4f98f9478e6b1ed5d22c29c, type: 3}
       propertyPath: m_Name
