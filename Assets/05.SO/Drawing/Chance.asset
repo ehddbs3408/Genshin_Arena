@@ -16,4 +16,4 @@ MonoBehaviour:
   twoStartPossibility: 29
   threeStartPossibility: 10.5
   fourStartPossibility: 4
-  fiveStartPossibility: 0.1
+  fiveStartPossibility: 100

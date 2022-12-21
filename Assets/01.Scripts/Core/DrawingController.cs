@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 public class DrawingController : MonoBehaviour
 {
     [SerializeField]
@@ -11,13 +13,36 @@ public class DrawingController : MonoBehaviour
     private Image _waeponImage;
     [SerializeField]
     private Transform _drawingEffect;
+    [SerializeField]
+    private GameObject _waeponNamePanel;
+    [SerializeField]
+    private TextMeshProUGUI  _weaponNameText; 
 
     [SerializeField]
     private List<Sprite> _spriteList;
+    [SerializeField]
+    private List<Image> _starList;
 
     [SerializeField]
     private DrawingWeaponPossibility _data;
-    
+
+    private void Start()
+    {
+        Init();
+    }
+
+    private void Init()
+    {
+        _waeponNamePanel.SetActive(false);
+        _drawingPanel.color = Color.black;
+        _drawingPanel.enabled = false;
+        _drawingEffect.localScale = Vector3.zero;
+        _waeponImage.enabled = false;
+        for (int i = 0; i < 5; i++)
+        {
+            _starList[i].gameObject.SetActive(false);
+        }
+    }
     public void DrawingMotion()
     {
         Sequence seq = DOTween.Sequence();
@@ -30,17 +55,35 @@ public class DrawingController : MonoBehaviour
         seq.Append(_drawingPanel.DOColor(Color.white, 0.5f));
         seq.AppendCallback(() =>
         {
-
-            _waeponImage.sprite = _spriteList[DrawingWeapon()];
+            int a = DrawingWeapon();
             _waeponImage.enabled = true;
+            _waeponNamePanel.SetActive(true);
+            _weaponNameText.text = a.ToString();
+
+            StartCoroutine(StarMotion(a));
+
+            a = Random.Range(0, 2) == 0 ? a : a + 5;
+            _waeponImage.sprite = _spriteList[a];
+            
         });
+        seq.AppendCallback(() =>
+        {
+
+        });
+    }
+
+    private IEnumerator StarMotion(int count)
+    {
+        for(int i = 0;i<count+1;i++)
+        {
+            _starList[i].gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 
     public void SkipExit()
     {
-        _drawingPanel.enabled = false;
-        _drawingEffect.localScale = Vector3.zero;
-        _waeponImage.enabled = false;
+        Init();
     }
 
     private int DrawingWeapon()
