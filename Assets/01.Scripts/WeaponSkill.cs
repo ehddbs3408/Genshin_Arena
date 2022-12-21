@@ -70,6 +70,7 @@ public class WeaponSkill : MonoBehaviour
     [SerializeField] PlayableDirector swordplayableDirector;
     [SerializeField] PlayableDirector spearplayabledirector;
 
+    [SerializeField] GameObject activeskillcooltimeui;
 
     public static int weaponskillnum = 10;
 
@@ -77,19 +78,20 @@ public class WeaponSkill : MonoBehaviour
 
     private float skillcooltime = 0f;
     private float nowskillcooltime = 0f;
-    private float swordcooltime = 1f;
+
+    private float swordcooltime = 0.8f;
     private float spearcooltime = 0.5f;
 
-    
-
-    public void Start()
+    private float activeskillcooltime = 15f;
+    private float specialskillcooltime = 35f;
+    public void Awake()
     {
 
-        if (weaponskillnum / 2 == 0)
+        if (weaponskillnum % 2 == 0)
         {
             nowskillcooltime = spearcooltime;
         }
-        else if(weaponskillnum / 2 != 0)
+        else if(weaponskillnum % 2 != 0)
         {
             nowskillcooltime = swordcooltime;
         }
@@ -146,34 +148,80 @@ public class WeaponSkill : MonoBehaviour
         fivestarspearskillfive.Stop();
         fivestarspearskillsix.Stop();
 
-        //스위치 문으로 바꿔줌 + 스킬 쿨타임도
     }
 
 
     public void Update()
     {
         skillcooltime += Time.deltaTime;
-        if (skillcooltime > nowskillcooltime)
+        activeskillcooltime += Time.deltaTime;
+        specialskillcooltime += Time.deltaTime;
+
+        
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (activeskillcooltime > 15f)
             {
-                if(weaponskillnum == 9)
+                activeskillcooltimeui.SetActive(true);
+                activeskillUI.isactive = true;
+                
+                if (weaponskillnum == 5)
+                {
+                    threestarswordeffect.func();
+                    //공격력 %증가
+                }
+                else if (weaponskillnum == 6)
+                {
+                    Threestarspeareffect.func();
+                }
+                else if (weaponskillnum == 7)
+                {
+                    fourstarswordeffect.func();
+                }
+                else if (weaponskillnum == 8)
+                {
+                    fourstarspeareffect.func();
+                }
+                else if (weaponskillnum == 9)
+                {
+                    fivestarswordeffect.func();
+                }
+                else if (weaponskillnum == 10)
+                {
+                    fivestarspeareffect.func();
+                }
+                activeskillcooltime = 0f;
+            }
+        }
+        
+        
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (specialskillcooltime > 35f)
+            {
+                if (weaponskillnum == 9)
                 {
                     swordplayableDirector.Play();
                 }
-                else if(weaponskillnum == 10)
+                else if (weaponskillnum == 10)
                 {
                     spearplayabledirector.Play();
                 }
+                specialskillcooltime = 0f;
             }
+        }
 
-            if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+
+            if (skillcooltime > nowskillcooltime)
             {
                 if (AgentSpriteRenderer._isflip == false)
                 {
                     transform.localScale = new Vector3(-1, 1, 1);
                 }
-                else if(AgentSpriteRenderer._isflip == true)
+                else if (AgentSpriteRenderer._isflip == true)
                 {
                     transform.localScale = new Vector3(1, 1, 1);
                 }
@@ -210,10 +258,12 @@ public class WeaponSkill : MonoBehaviour
                     case 10:
                         StartCoroutine(fivestarspearskillfunc());
                         break;
+                
+                        
                 }
                 skillcooltime = 0f;
+
             }
-            
         }
     }
 
