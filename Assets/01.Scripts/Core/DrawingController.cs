@@ -16,7 +16,9 @@ public class DrawingController : MonoBehaviour
     [SerializeField]
     private GameObject _waeponNamePanel;
     [SerializeField]
-    private TextMeshProUGUI  _weaponNameText; 
+    private TextMeshProUGUI  _weaponNameText;
+    [SerializeField]
+    private Image _skipBtn;
 
     [SerializeField]
     private List<Sprite> _spriteList;
@@ -38,6 +40,7 @@ public class DrawingController : MonoBehaviour
         _drawingPanel.enabled = false;
         _drawingEffect.localScale = Vector3.zero;
         _waeponImage.enabled = false;
+        _skipBtn.gameObject.SetActive(false);
         for (int i = 0; i < 5; i++)
         {
             _starList[i].gameObject.SetActive(false);
@@ -55,15 +58,16 @@ public class DrawingController : MonoBehaviour
         seq.Append(_drawingPanel.DOColor(Color.white, 0.5f));
         seq.AppendCallback(() =>
         {
-            int a = DrawingWeapon();
+            int idx = DrawingWeaponPossibility();
             _waeponImage.enabled = true;
             _waeponNamePanel.SetActive(true);
-            _weaponNameText.text = a.ToString();
 
-            StartCoroutine(StarMotion(a));
+            //_weaponNameText.text = idx.ToString();
+            DrawingWeapon(idx);
 
-            a = Random.Range(0, 2) == 0 ? a : a + 5;
-            _waeponImage.sprite = _spriteList[a];
+            StartCoroutine(StarMotion(idx));
+
+            
             
         });
         seq.AppendCallback(() =>
@@ -79,17 +83,23 @@ public class DrawingController : MonoBehaviour
             _starList[i].gameObject.SetActive(true);
             yield return new WaitForSeconds(0.2f);
         }
+        _skipBtn.gameObject.SetActive(true);
     }
 
     public void SkipExit()
     {
         Init();
     }
+    private void DrawingWeapon(int idx)
+    {
+        idx = Random.Range(0, 2) == 0 ? idx : idx + 5;
+        _waeponImage.sprite = _spriteList[idx];
+    }
 
-    private int DrawingWeapon()
+    private int DrawingWeaponPossibility()
     {
         float chance = PossibilityToValue() * 0.1f;
-        
+        Debug.Log(chance);
         int result = 0;
         if (_data.fiveStartPossibility > chance)
             result = 4;
@@ -106,7 +116,7 @@ public class DrawingController : MonoBehaviour
     private float PossibilityToValue()
     {
         float chance = Random.Range(0, 1000);
-        Debug.Log(chance);
+        
         return chance;
     }
 }
