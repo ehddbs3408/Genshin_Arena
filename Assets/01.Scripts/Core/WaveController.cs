@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 [Serializable]
 class WaveData
@@ -15,6 +16,11 @@ class WaveData
 public class WaveController : MonoBehaviour
 {
     private Spawner _spawner;
+
+    [SerializeField]
+    private TextMeshProUGUI _waveText;
+    [SerializeField]
+    private TextMeshProUGUI _overEnemyText;
 
     [SerializeField]
     private List<WaveData> _waveDataList;
@@ -37,6 +43,8 @@ public class WaveController : MonoBehaviour
         if (_waveDataList[0] == null) return;
         _currentWaveIdx = 0;
         _currentWaveData = _waveDataList[0];
+        _waveText.text = _currentWaveData.waveName;
+        _overEnemyText.text = string.Format("OverEnemyCount {0}", _currentWaveData.waveMaxEnemyCount.ToString());
     }
 
     private void Update()
@@ -78,6 +86,9 @@ public class WaveController : MonoBehaviour
         _currentWaveIdx++;
         _currentWaveData = _waveDataList[_currentWaveIdx];
 
+        _waveText.text = _currentWaveData.waveName;
+        _overEnemyText.text = string.Format("OverEnemyCount {0}", _currentWaveData.waveMaxEnemyCount.ToString());
+;
         _spawner.SetSpawnGruop(_currentWaveData.waveName);
     }
 }

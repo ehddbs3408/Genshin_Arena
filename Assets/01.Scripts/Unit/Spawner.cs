@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 [Serializable]
 class SpawnData
@@ -12,6 +13,8 @@ class SpawnData
 
 public class Spawner : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI _text;
     [SerializeField]
     private List<Transform> _spawnPosList;
     [SerializeField]
@@ -77,6 +80,7 @@ public class Spawner : MonoBehaviour
     public void CheckSpawnEnemy()
     {
         _spawnEnemyCount = transform.childCount;
+        _text.text = string.Format("Enemy Count : {0}", _spawnEnemyCount.ToString());
         Debug.Log(_spawnEnemyCount);
     }
 }

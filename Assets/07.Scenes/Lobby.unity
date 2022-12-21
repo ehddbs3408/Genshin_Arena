@@ -447,6 +447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrawingWaeponPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7478297352280480051, guid: 1439e777a4f98f9478e6b1ed5d22c29c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7478297352280480060, guid: 1439e777a4f98f9478e6b1ed5d22c29c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4710,6 +4714,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 751022614}
+    - target: {fileID: 8426004642083761083, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8426004642108332182, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4798,6 +4806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Equip Item Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 8426004642108332183, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8426004642168238654, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4818,6 +4830,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 751022614}
+    - target: {fileID: 8426004642838317021, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8426004642900418269, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
