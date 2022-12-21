@@ -30,10 +30,10 @@ public abstract class Unit : MonoBehaviour, IHittable, IKnockBack, IStun
     public virtual void OnGethit(int damaged, GameObject dealer)
     {
 
-        Debug.Log($"hit : {gameObject.name}");
+        //Debug.Log($"hit : {gameObject.name}");
         Health -= damaged;
 
-        if(Health <  0)
+        if(Health <=  0)
         {
             OnDead();
         }

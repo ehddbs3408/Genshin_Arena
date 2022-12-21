@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Unit
 {
@@ -21,6 +22,9 @@ public class Player : Unit
     private float _maxStamina;
     private float _stamina;
 
+    [SerializeField]
+    private Slider _hpSlider;
+
 
     #region Interface
     public override void OnDead()
@@ -28,12 +32,20 @@ public class Player : Unit
         Debug.Log(gameObject.name + " : Dead");
         _agentMovement.MovementStopFlag();
         _agentSpriteRenderer.SpriteRendererFlag();
+        Managers.Scene.LoadScene(Define.Scene.Lobby);
     }
 
     public override void OnGethit(int damaged, GameObject dealer)
     {
         Debug.Log(this.gameObject.name + " : " + damaged +" Damage");
-        base.OnGethit(damaged, dealer);
+
+        Health -= damaged;
+        _hpSlider.value = (float)Health / (float)_unitData.maxHp;
+
+        if (Health <= 0)
+        {
+            OnDead();
+        }
     }
 
     public override void OnGetKnockBack(Vector3 dir, float power, float duration, GameObject dealer = null)
