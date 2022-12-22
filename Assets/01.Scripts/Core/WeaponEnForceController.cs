@@ -21,6 +21,22 @@ public class WeaponEnForceController : MonoBehaviour
 
     private GameObject _currentEnforcePanel;
 
+    private Jaereonitem itemlist;
+    private WeaponStatData weaponStatList;
+    private WeaponJsonData drawingdata;
+
+    private void Awake()
+    {
+        Init();
+    }
+
+    public void Init()
+    {
+        itemlist = DataManager.LoadJsonFile<Jaereonitem>(Application.dataPath + "/SAVE/Weapon", "Jaereonitem");
+        weaponStatList = DataManager.LoadJsonFile<WeaponStatData>(Application.dataPath + "/SAVE/Weapon", "WeaponStat");
+        drawingdata = DataManager.LoadJsonFile<WeaponJsonData>(Application.dataPath + "/SAVE/Weapon", "WeaponList");
+    }
+
     public void VoidEnforcePanel(int idx)
     {
         _currentEnforcePanel = _waeponEnforceList[idx];
@@ -48,7 +64,6 @@ public class WeaponEnForceController : MonoBehaviour
     private Jeareon GetJeareonData(int starIdx)
     {
         starIdx = starIdx > 5 ? starIdx - 5 : starIdx;
-        Jaereonitem itemlist = DataManager.LoadJsonFile<Jaereonitem>(Application.dataPath + "/SAVE/Weapon", "Jaereonitem");
         foreach(Jeareon item in itemlist.list)
         {
             if (item.reforgestarlevel == starIdx)
@@ -61,10 +76,13 @@ public class WeaponEnForceController : MonoBehaviour
 
         return jeareon;
     }
-
+    private void SaveJeareonData()
+    {
+        string json = DataManager.ObjectToJson(itemlist);
+        DataManager.SaveJsonFile(Application.dataPath + "/SAVE/Weapon", "Jaereonitem", json);
+    }
     private WeaponStat GetWeaponData(int idx)
     {
-        WeaponStatData weaponStatList = DataManager.LoadJsonFile<WeaponStatData>(Application.dataPath + "/SAVE/Weapon", "WeaponStat");
         WeaponStat data = null;
 
         foreach (WeaponStat stat in weaponStatList.list)
@@ -82,7 +100,6 @@ public class WeaponEnForceController : MonoBehaviour
             data.Damage = 100;
             data.weaponCt = null;
         }
-        WeaponJsonData drawingdata = DataManager.LoadJsonFile<WeaponJsonData>(Application.dataPath + "/SAVE/Weapon", "WeaponList");
         string name = StarOfName(idx);
         foreach (WeaponCnt ct in drawingdata.list)
         {
@@ -98,7 +115,16 @@ public class WeaponEnForceController : MonoBehaviour
 
         return data;
     }
+    private void SaveWeaponStatData()
+    {
+        string json = DataManager.ObjectToJson(weaponStatList);
+        DataManager.SaveJsonFile(Application.dataPath + "/SAVE/Weapon", "WeaponStat", json);
+    }
 
+    private void EnforceWeapon()
+    {
+
+    }
     private string StarOfName(int idx)
     {
         string name = "";
