@@ -72,6 +72,8 @@ public class WeaponSkill : MonoBehaviour
 
     [SerializeField] GameObject activeskillcooltimeui;
 
+    [SerializeField] AudioSource c;
+
     WaitForSeconds a = new WaitForSeconds(0.1f);
 
     
@@ -228,7 +230,6 @@ public class WeaponSkill : MonoBehaviour
                 {
                     transform.localScale = new Vector3(1, 1, 1);
                 }
-
                 switch (data.weaponStat.id)
                 {
                     case 0:

@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637fa69803713f44e9bef21438a8bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitData: {fileID: 11400000, guid: 6d2c4f91efeff094ca6aa6ba99b03ab6, type: 2}
+  _unitData: {fileID: 11400000, guid: c4f893e0d88e6df4fbbc4809ba187949, type: 2}
   _basePosition: {fileID: 0}
   _isActive: 1
 --- !u!114 &5176416099798202467
@@ -526,6 +526,7 @@ MonoBehaviour:
   _currentState: {fileID: 5176416099009380980}
   target: {fileID: 0}
   basePosition: {fileID: 5176416099798202461}
+  isDead: 0
 --- !u!114 &5176416099798202464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,7 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594e9ed5131dc7e44869675dacd2a593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movenetData: {fileID: 11400000, guid: 474a7419ee75d2f4ab07521e9e0f7d94, type: 2}
+  _movenetData: {fileID: 11400000, guid: 3b538288aa0bd1445943cfd3491b440b, type: 2}
   rigidbodyPath: 
 --- !u!114 &5176416099798202465
 MonoBehaviour:
@@ -552,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bab02a76ed81a4f94213a9483e8c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDataSO: {fileID: 11400000, guid: a53e8779fbfa0004690ed496ded73fee, type: 2}
+  _attackDataSO: {fileID: 11400000, guid: 3952ebebccdebff4bb47ab4a04253320, type: 2}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256

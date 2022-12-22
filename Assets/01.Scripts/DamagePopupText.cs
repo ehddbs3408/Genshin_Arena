@@ -10,18 +10,23 @@ public class DamagePopupText : MonoBehaviour
     {
         Init();
     }
-
+    private void OnEnable()
+    {
+        Init();
+    }
     void Init()
     {
+        DOTween.KillAll();
         Sequence seq = DOTween.Sequence();
         seq.Append(transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1));
         seq.Join(transform.DOMoveY(5f, 1));
-        seq.AppendCallback(() => Die());
+        seq.AppendCallback(Die);
     }
 
     public void Die()
     {
-        DOTween.KillAll();
-        Managers.Resource.Destroy(this.gameObject);
+        Debug.Log("QWESDZCXCQWEDAVDS");
+        gameObject.SetActive(false);
+        Managers.Resource.Destroy(gameObject);
     }
 }
