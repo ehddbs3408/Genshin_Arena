@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29996b53badd8b943af4d41e5bc8542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamagePopupPrefab: {fileID: 0}
+  DamagePopupPrefab: {fileID: 131212003044346369, guid: 66827e6e1b9e3964d9690c3a2aed9298, type: 3}
 --- !u!1 &6502366578881844272
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@
             "Damage": 100
         },
         {
+<<<<<<< HEAD
             "id": 3,
             "level": 0,
             "weaponCt": {
@@ -81,6 +82,8 @@
             "Damage": 100
         },
         {
+=======
+>>>>>>> 250323d4fc5eb0195083f4144538b28c431c646b
             "id": 6,
             "level": 0,
             "weaponCt": {
@@ -89,6 +92,7 @@
             },
             "reforgecount": 3,
             "Damage": 100
+<<<<<<< HEAD
         },
         {
             "id": 1,
@@ -99,6 +103,8 @@
             },
             "reforgecount": 3,
             "Damage": 100
+=======
+>>>>>>> 250323d4fc5eb0195083f4144538b28c431c646b
         }
     ]
 }
