@@ -19,6 +19,10 @@ public class DrawingController : MonoBehaviour
     private TextMeshProUGUI  _weaponNameText;
     [SerializeField]
     private Image _skipBtn;
+    [SerializeField]
+    private Image _drawingBtn;
+    [SerializeField]
+    private TextMeshProUGUI _drawingtext;
 
     [SerializeField]
     private List<Sprite> _spriteList;
@@ -27,6 +31,8 @@ public class DrawingController : MonoBehaviour
 
     [SerializeField]
     private DrawingWeaponPossibility _data;
+
+    private int drawing;
 
     private void Start()
     {
@@ -41,6 +47,8 @@ public class DrawingController : MonoBehaviour
         _drawingEffect.localScale = Vector3.zero;
         _waeponImage.enabled = false;
         _skipBtn.gameObject.SetActive(false);
+        drawing = PlayerPrefs.GetInt("Drawing");
+        _drawingtext.text = drawing.ToString();
         for (int i = 0; i < 5; i++)
         {
             _starList[i].gameObject.SetActive(false);
@@ -48,6 +56,13 @@ public class DrawingController : MonoBehaviour
     }
     public void DrawingMotion()
     {
+        
+        if (drawing < 1)
+        {
+            DontEffect();
+            return;   
+        }
+
         Sequence seq = DOTween.Sequence();
         seq.AppendCallback(() =>{
             _drawingPanel.enabled = true;
@@ -66,9 +81,19 @@ public class DrawingController : MonoBehaviour
             DrawingWeapon(idx);
 
             StartCoroutine(StarMotion(idx));
+            drawing--;
+            PlayerPrefs.SetInt("Drawing", drawing);
         });
     }
 
+    private void DontEffect()
+    {
+        Sequence seq = DOTween.Sequence();
+        seq.Append(_drawingtext.rectTransform.DOShakeAnchorPos(0.3f, 50));
+        seq.Join(_drawingtext.DOColor(Color.red, 0.3f));
+        seq.Append(_drawingtext.DOColor(Color.white, 0.3f));
+
+    }
     private IEnumerator StarMotion(int count)
     {
         for(int i = 0;i<count+1;i++)

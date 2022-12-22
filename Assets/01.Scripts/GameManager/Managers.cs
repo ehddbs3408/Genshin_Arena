@@ -44,6 +44,11 @@ public class Managers : MonoBehaviour
     {
         Init();
     }
+
+    private void OnEnable()
+    {
+        Init();
+    }
     static void Init()
     {
         if (instance == null)
@@ -60,6 +65,8 @@ public class Managers : MonoBehaviour
             instance._pool.Init();
             instance._time.Init();
             instance._enemyKill.Init();
+
+            Debug.Log("asd");
         }
     }
     private void Update()

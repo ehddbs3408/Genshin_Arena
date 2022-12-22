@@ -6,11 +6,11 @@
         },
         {
             "wave": 2,
-            "killEnemyCnt": 12
+            "killEnemyCnt": 9
         },
         {
             "wave": 3,
-            "killEnemyCnt": 45
+            "killEnemyCnt": 38
         }
     ]
 }

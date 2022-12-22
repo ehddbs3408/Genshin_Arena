@@ -14,6 +14,7 @@ public class EnemyKillManager
         list.enemyKillList = new List<EnemyKill>();
         StartWave();
     }
+
     public void GameOver()
     {
         list.enemyKillList.Add(_currentKillData);
