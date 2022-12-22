@@ -2,13 +2,13 @@
     "level": 0,
     "exp": 0.0,
     "weaponStat": {
-        "id": 9,
-        "level": 1,
+        "id": 8,
+        "level": 0,
         "weaponCt": {
-            "name": "흩날리는 부세의 풍경",
+            "name": "방천화극창",
             "count": 1
         },
         "reforgecount": 3,
-        "Damage": 161
+        "Damage": 100
     }
 }
