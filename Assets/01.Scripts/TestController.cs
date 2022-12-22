@@ -4,24 +4,58 @@ using UnityEngine;
 
 public class TestController : MonoBehaviour
 {
-    IHittable hit;
-    IStun stun;
-    IKnockBack knockBack;
-
+    private Jaereonitem itemlist;
     private void Awake()
     {
-        hit = GameObject.Find("Player").GetComponent<IHittable>();
-        stun = GameObject.Find("Player").GetComponent<IStun>();
-        knockBack = GameObject.Find("Player").GetComponent<IKnockBack>();
+        itemlist = DataManager.LoadJsonFile<Jaereonitem>(Application.dataPath + "/SAVE/Weapon", "Jaereonitem");
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.V))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
-            hit.OnGethit(10, this.gameObject);
-            stun.OnGetStun(100, 0.2f);
-            knockBack.OnGetKnockBack(Vector3.right, 10, 1, this.gameObject);
+            Save(0);
         }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Save(1);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Save(2);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Save(3);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Save(4);
+        }
+    }
+
+    private void Save(int starIdx)
+    {
+        Jeareon jeareon = null;
+        starIdx = starIdx > 5 ? starIdx - 5 : starIdx;
+        for(int i = 0;i<itemlist.list.Count;i++)
+        {
+            if (itemlist.list[i].reforgestarlevel == starIdx)
+            {
+                jeareon = itemlist.list[i];
+                itemlist.list[i].cnt++;
+            }
+        }
+
+        if(jeareon == null)
+        {
+            jeareon = new Jeareon();
+            jeareon.reforgestarlevel = starIdx;
+            jeareon.cnt = 1;
+            itemlist.list.Add(jeareon);
+        }
+        
+        string json = DataManager.ObjectToJson(itemlist);
+        DataManager.SaveJsonFile(Application.dataPath + "/SAVE/Weapon", "Jaereonitem", json);
     }
 }
