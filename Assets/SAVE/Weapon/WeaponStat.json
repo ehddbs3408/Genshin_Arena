@@ -19,6 +19,16 @@
             },
             "reforgecount": 3,
             "Damage": 100
+        },
+        {
+            "id": 3,
+            "level": 0,
+            "weaponCt": {
+                "name": "월왕구천검",
+                "count": 0
+            },
+            "reforgecount": 3,
+            "Damage": 100
         }
     ]
 }

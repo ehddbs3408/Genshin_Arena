@@ -46,27 +46,8 @@ public class WeaponEnForceController : MonoBehaviour
         weaponStatList = DataManager.LoadJsonFile<WeaponStatData>(Application.dataPath + "/SAVE/Weapon", "WeaponStat");
         drawingdata = DataManager.LoadJsonFile<WeaponJsonData>(Application.dataPath + "/SAVE/Weapon", "WeaponList");
 
-        if (user.weaponStat.id == 0)
-        {
-            user.weaponStat = null;
-            foreach(WeaponStat cn in weaponStatList.list)
-            {
-                if (cn.id == 0)
-                {
-                    user.weaponStat = cn;
-                }
-            }
-            if(user.weaponStat == null)
-            {
-                user.weaponStat = new WeaponStat();
-                user.weaponStat.weaponCt = new WeaponCnt();
-                user.weaponStat.weaponCt.count = 1;
-                user.weaponStat.weaponCt.name = "¸¸¿ù°Ë";
-                user.weaponStat.Damage = 100;
-            }
-            string json = DataManager.ObjectToJson(user);
-            DataManager.SaveJsonFile(Application.dataPath + "/SAVE/Player", "User", json);
-        }
+
+
 
 
     }
