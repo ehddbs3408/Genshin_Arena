@@ -6,13 +6,34 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject PausePanel;
+    [SerializeField] private GameObject backtomenu;
+    [SerializeField] private GameObject setting;
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            PausePanel.SetActive(true);
-            Time.timeScale = 0;
+            if(PausePanel.activeSelf == true && backtomenu.activeSelf == false && setting.activeSelf == false)
+            {
+                PausePanel.SetActive(false);
+                Time.timeScale = 1;
+            }
+            else if(PausePanel.activeSelf == false)
+            {
+                PausePanel.SetActive(true);
+                Time.timeScale = 0;
+            }
+            
+            
+            if (setting.activeSelf == true && PausePanel.activeSelf == true)
+            {
+                setting.SetActive(false);
+            }
+            else if(backtomenu.activeSelf == true && PausePanel.activeSelf == true)
+            {
+                backtomenu.SetActive(false);
+            }
+            
             
         }
     }
