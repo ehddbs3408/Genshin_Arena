@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637fa69803713f44e9bef21438a8bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitData: {fileID: 11400000, guid: 6d2c4f91efeff094ca6aa6ba99b03ab6, type: 2}
+  _unitData: {fileID: 11400000, guid: 89bcb186f1854b54bb3d4f40a4aa6b9d, type: 2}
   _basePosition: {fileID: 0}
   _isActive: 1
 --- !u!114 &569912917288865647
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594e9ed5131dc7e44869675dacd2a593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movenetData: {fileID: 11400000, guid: 474a7419ee75d2f4ab07521e9e0f7d94, type: 2}
+  _movenetData: {fileID: 11400000, guid: a7f30be8fc207e545b5efc16fcfdd66a, type: 2}
   rigidbodyPath: 
 --- !u!114 &569912917288865641
 MonoBehaviour:
