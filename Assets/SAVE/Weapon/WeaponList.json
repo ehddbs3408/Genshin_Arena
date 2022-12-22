@@ -2,39 +2,39 @@
     "list": [
         {
             "name": "칠성검",
-            "count": 30
+            "count": 21
         },
         {
             "name": "만월검",
-            "count": 106
+            "count": 79
         },
         {
             "name": "반월창",
-            "count": 108
+            "count": 89
         },
         {
             "name": "방천화극창",
-            "count": 2
+            "count": 0
         },
         {
             "name": "청운검",
-            "count": 8
+            "count": 0
         },
         {
             "name": "흩날리는 부세의 풍경",
-            "count": 2
+            "count": 1
         },
         {
             "name": "용광창",
-            "count": 9
+            "count": 1
         },
         {
             "name": "호마창",
-            "count": 22
+            "count": 19
         },
         {
             "name": "월왕구천검",
-            "count": 5
+            "count": 0
         }
     ]
 }

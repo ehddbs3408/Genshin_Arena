@@ -10500,7 +10500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a08563fb8fd161c429ef08460b1ea2a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08a63ac6ce3d243498b792b59b8c78fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17837,7 +17837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8426004642108332182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17918,7 +17918,7 @@ MonoBehaviour:
   - {fileID: 2741295528078574977}
   - {fileID: 1817614417674547382}
   - {fileID: 1993139270347824795}
-  - {fileID: 0}
+  - {fileID: 258745902318893349}
   - {fileID: 1628980381}
   - {fileID: 126237507}
   - {fileID: 1973927248}
@@ -18068,7 +18068,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 258745902318893349}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -18088,6 +18088,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1063075806}
+        m_TargetAssemblyTypeName: WeaponEnForceController, Assembly-CSharp
+        m_MethodName: VoidEnforcePanel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -20229,6 +20241,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1063075806}
+        m_TargetAssemblyTypeName: WeaponEnForceController, Assembly-CSharp
+        m_MethodName: VoidEnforcePanel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

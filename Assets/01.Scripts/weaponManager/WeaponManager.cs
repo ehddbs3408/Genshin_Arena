@@ -25,6 +25,8 @@ public class WeaponManager : MonoBehaviour
 
         DataManager.SaveJsonFile("SAVE/Weapon", "weapon", json);
 
+        PlayerJsonData data = DataManager.LoadJsonFile<PlayerJsonData>("SAVE/Player", "User");
+
         WeaponJsonData wjdata = DataManager.LoadJsonFile<WeaponJsonData>("SAVE/Weapon", "weapon");
         foreach(WeaponCnt cn in wjdata.list)
         {
