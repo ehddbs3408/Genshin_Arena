@@ -45,6 +45,30 @@ public class WeaponEnForceController : MonoBehaviour
         itemlist = DataManager.LoadJsonFile<Jaereonitem>(Application.dataPath + "/SAVE/Weapon", "Jaereonitem");
         weaponStatList = DataManager.LoadJsonFile<WeaponStatData>(Application.dataPath + "/SAVE/Weapon", "WeaponStat");
         drawingdata = DataManager.LoadJsonFile<WeaponJsonData>(Application.dataPath + "/SAVE/Weapon", "WeaponList");
+
+        if (user.weaponStat.id == 0)
+        {
+            user.weaponStat = null;
+            foreach(WeaponStat cn in weaponStatList.list)
+            {
+                if (cn.id == 0)
+                {
+                    user.weaponStat = cn;
+                }
+            }
+            if(user.weaponStat == null)
+            {
+                user.weaponStat = new WeaponStat();
+                user.weaponStat.weaponCt = new WeaponCnt();
+                user.weaponStat.weaponCt.count = 1;
+                user.weaponStat.weaponCt.name = "¸¸¿ù°Ë";
+                user.weaponStat.Damage = 100;
+            }
+            string json = DataManager.ObjectToJson(user);
+            DataManager.SaveJsonFile(Application.dataPath + "/SAVE/Player", "User", json);
+        }
+
+
     }
 
     public void VoidEnforcePanel(int idx)
@@ -76,7 +100,10 @@ public class WeaponEnForceController : MonoBehaviour
         SetText();
 
         user = DataManager.LoadJsonFile<PlayerJsonData>(Application.dataPath + "/SAVE/Player", "User");
+        
         _equipBtn.gameObject.SetActive(!(user.weaponStat.id == _currentWeaponStat.id));
+
+        SaveData();
     }
 
     private void SetText()
@@ -142,7 +169,10 @@ public class WeaponEnForceController : MonoBehaviour
         {
             data.weaponCt = new WeaponCnt();
             data.weaponCt.name = name;
-            data.weaponCt.count = 0;
+            if(idx == 0 || idx == 5)
+                data.weaponCt.count = 1;
+            else
+                data.weaponCt.count = 0;
         }
 
         return data;

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GetItemController : MonoBehaviour
 {
     private int isGameOver;
+
+    private Transform paenl;
 
     [SerializeField]
     private TextMeshProUGUI _drawingText;
@@ -21,6 +24,13 @@ public class GetItemController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _5stText;
 
+    [SerializeField]
+    private Slider _expSlider;
+    [SerializeField]
+    private TextMeshProUGUI _levelText;
+
+
+
     private int _1st = 0;
     private int _2st = 0;
     private int _3st = 0;
@@ -31,6 +41,7 @@ public class GetItemController : MonoBehaviour
     private void Awake()
     {
         itemlist = DataManager.LoadJsonFile<Jaereonitem>(Application.dataPath + "/SAVE/Weapon", "Jaereonitem");
+        paenl = transform.Find("Panel").GetComponent<Transform>();
     }
     private void Start()
     {
@@ -42,10 +53,10 @@ public class GetItemController : MonoBehaviour
         isGameOver = PlayerPrefs.GetInt("GameOver",0);
         if (isGameOver == 0)
         {
-            gameObject.SetActive(false);
+            paenl.gameObject.SetActive(false);
             return;
         }
-
+        paenl.gameObject.SetActive(true);
         PlayerPrefs.SetInt("GameOver", 0);
 
         GetItem();

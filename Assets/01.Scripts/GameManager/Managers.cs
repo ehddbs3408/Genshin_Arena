@@ -75,6 +75,7 @@ public class Managers : MonoBehaviour
     }
     static void Clear()
     {
+        TimeMa.Clear();
         Kill.Clear();
         Scene.Clear();
         Pool.Clear(); //항상 마지막에 클리어

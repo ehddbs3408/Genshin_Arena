@@ -1,3 +1,24 @@
 {
-    "list": []
+    "list": [
+        {
+            "id": 0,
+            "level": 0,
+            "weaponCt": {
+                "name": "만월검",
+                "count": 1
+            },
+            "reforgecount": 3,
+            "Damage": 100
+        },
+        {
+            "id": 5,
+            "level": 0,
+            "weaponCt": {
+                "name": "반월창",
+                "count": 1
+            },
+            "reforgecount": 3,
+            "Damage": 100
+        }
+    ]
 }
