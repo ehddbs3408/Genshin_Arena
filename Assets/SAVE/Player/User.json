@@ -2,15 +2,11 @@
     "level": 0,
     "exp": 0.0,
     "weaponStat": {
-        "id": 5,
+        "id": 9,
         "level": 0,
         "weaponCt": {
-<<<<<<< HEAD
-            "name": "반월창",
-=======
-            "name": "만월검",
->>>>>>> 250323d4fc5eb0195083f4144538b28c431c646b
-            "count": 1
+            "name": "흩날리는 부세의 풍경",
+            "count": 2
         },
         "reforgecount": 3,
         "Damage": 100
