@@ -32,6 +32,12 @@ public class TestController : MonoBehaviour
         {
             Save(4);
         }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+             int drawing = PlayerPrefs.GetInt("Drawing");
+            drawing++;
+            PlayerPrefs.SetInt("Drawing", drawing);
+        }
     }
 
     private void Save(int starIdx)

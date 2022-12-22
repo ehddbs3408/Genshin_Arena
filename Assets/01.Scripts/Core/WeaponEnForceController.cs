@@ -83,8 +83,6 @@ public class WeaponEnForceController : MonoBehaviour
         user = DataManager.LoadJsonFile<PlayerJsonData>(Application.dataPath + "/SAVE/Player", "User");
         
         _equipBtn.gameObject.SetActive(!(user.weaponStat.id == _currentWeaponStat.id));
-
-        SaveData();
     }
 
     private void SetText()

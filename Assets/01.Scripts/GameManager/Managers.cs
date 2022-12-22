@@ -59,7 +59,7 @@ public class Managers : MonoBehaviour
                 go = new GameObject { name = "@Managers" };
                 go.AddComponent<Managers>();
             }
-            DontDestroyOnLoad(go);
+            //DontDestroyOnLoad(go);
             instance = go.GetComponent<Managers>();
 
             instance._pool.Init();
@@ -75,6 +75,7 @@ public class Managers : MonoBehaviour
     }
     static void Clear()
     {
+        Debug.Log("asd");
         TimeMa.Clear();
         Kill.Clear();
         Scene.Clear();

@@ -29,6 +29,76 @@
             },
             "reforgecount": 3,
             "Damage": 100
+        },
+        {
+            "id": 2,
+            "level": 0,
+            "weaponCt": {
+                "name": "청운검",
+                "count": 0
+            },
+            "reforgecount": 3,
+            "Damage": 100
+        },
+        {
+            "id": 7,
+            "level": 0,
+            "weaponCt": {
+                "name": "용광창",
+                "count": 0
+            },
+            "reforgecount": 3,
+            "Damage": 100
+        },
+        {
+            "id": 8,
+            "level": 0,
+            "weaponCt": {
+                "name": "방천화극창",
+                "count": 0
+            },
+            "reforgecount": 3,
+            "Damage": 100
+        },
+        {
+            "id": 4,
+            "level": 0,
+            "weaponCt": {
+                "name": "찰나의 덧없는 삶",
+                "count": 0
+            },
+            "reforgecount": 3,
+            "Damage": 100
+        },
+        {
+            "id": 9,
+            "level": 0,
+            "weaponCt": {
+                "name": "흩날리는 부세의 풍경",
+                "count": 0
+            },
+            "reforgecount": 3,
+            "Damage": 100
+        },
+        {
+            "id": 6,
+            "level": 0,
+            "weaponCt": {
+                "name": "호마창",
+                "count": 0
+            },
+            "reforgecount": 3,
+            "Damage": 100
+        },
+        {
+            "id": 1,
+            "level": 0,
+            "weaponCt": {
+                "name": "칠성검",
+                "count": 0
+            },
+            "reforgecount": 3,
+            "Damage": 100
         }
     ]
 }
