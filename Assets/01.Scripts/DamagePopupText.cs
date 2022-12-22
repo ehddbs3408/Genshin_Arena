@@ -6,8 +6,10 @@ using DG.Tweening;
 public class DamagePopupText : MonoBehaviour
 {
 
+    Sequence seq;
     private void Start()
     {
+        Sequence seq = DOTween.Sequence();
         Init();
     }
     private void OnEnable()
@@ -16,8 +18,7 @@ public class DamagePopupText : MonoBehaviour
     }
     void Init()
     {
-        DOTween.KillAll();
-        Sequence seq = DOTween.Sequence();
+         
         seq.Append(transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1));
         seq.Join(transform.DOMoveY(5f, 1));
         seq.AppendCallback(Die);
@@ -25,6 +26,7 @@ public class DamagePopupText : MonoBehaviour
 
     public void Die()
     {
+        seq.Kill();
         Debug.Log("QWESDZCXCQWEDAVDS");
         gameObject.SetActive(false);
         Managers.Resource.Destroy(gameObject);

@@ -2,7 +2,11 @@
     "enemyKillList": [
         {
             "wave": 1,
-            "killEnemyCnt": 5
+            "killEnemyCnt": 7
+        },
+        {
+            "wave": 2,
+            "killEnemyCnt": 0
         }
     ]
 }
