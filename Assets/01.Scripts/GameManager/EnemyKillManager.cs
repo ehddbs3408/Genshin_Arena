@@ -11,6 +11,7 @@ public class EnemyKillManager
     public void Init()
     {
         list = new EnemyKillJsonData();
+        list.enemyKillList = new List<EnemyKill>();
         StartWave();
     }
     public void GameOver()
@@ -21,6 +22,7 @@ public class EnemyKillManager
     }
     public void StartWave()
     {
+        Debug.Log("asd");
         _currentKillData = new EnemyKill();
         _currentKillData.killEnemyCnt = 0;
         _currentKillData.wave = 1;
