@@ -7192,9 +7192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a05af5725c7a8e418f95c497d8af169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PausePanel: {fileID: 0}
-  backtomenu: {fileID: 0}
-  setting: {fileID: 0}
+  PausePanel: {fileID: 10296287}
+  backtomenu: {fileID: 1137423661}
+  setting: {fileID: 1016430806}
 --- !u!4 &1138870957
 Transform:
   m_ObjectHideFlags: 0
