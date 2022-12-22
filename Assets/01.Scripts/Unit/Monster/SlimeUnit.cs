@@ -12,6 +12,15 @@ public class SlimeUnit : EnemyUnit
 
     public override void OnDead()
     {
+        _header.isDead = true;
         _animator.OnTriggerDeadAnimation();
+        StartCoroutine(DeadCoruotine());
+    }
+
+    private IEnumerator DeadCoruotine()
+    {
+        yield return new WaitForSeconds(1f);
+        Managers.Kill.AddKillCnt();
+        Managers.Resource.Destroy(gameObject);
     }
 }

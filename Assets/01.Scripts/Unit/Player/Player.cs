@@ -22,7 +22,7 @@ public class Player : Unit
     private float _maxStamina;
     private float _stamina;
 
-    public bool _isDamaged = true;
+    public bool _isDamaged = false;
 
     [SerializeField]
     private Slider _hpSlider;
@@ -34,7 +34,8 @@ public class Player : Unit
         Debug.Log(gameObject.name + " : Dead");
         _agentMovement.MovementStopFlag();
         _agentSpriteRenderer.SpriteRendererFlag();
-        Managers.Scene.LoadScene(Define.Scene.Lobby);
+        GameScene scene = Managers.Scene.CurrentScene as GameScene;
+        scene.GameOver();
     }
     public void Damaged(bool a)
     {
@@ -43,9 +44,10 @@ public class Player : Unit
 
     public override void OnGethit(int damaged, GameObject dealer)
     {
-        Debug.Log(this.gameObject.name + " : " + damaged +" Damage");
-        if (!_isDamaged) return;
+        
+        if (_isDamaged) return;
 
+        Debug.Log(this.gameObject.name + " : " + damaged + " Damage");
 
         Health -= damaged;
         _hpSlider.value = (float)Health / (float)_unitData.maxHp;

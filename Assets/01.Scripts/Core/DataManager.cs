@@ -16,6 +16,10 @@ public class DataManager : MonoBehaviour
     }
     public static void SaveJsonFile(string createPath, string fileName, string jsonData)
     {
+        if (!Directory.Exists(createPath))
+        {
+            Directory.CreateDirectory(createPath);
+        }
         FileStream fileStream = new FileStream(string.Format("{0}/{1}.json", createPath, fileName), FileMode.Create);
         byte[] data = Encoding.UTF8.GetBytes(jsonData);
         fileStream.Write(data, 0, data.Length); fileStream.Close();

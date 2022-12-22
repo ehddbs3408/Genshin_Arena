@@ -16,9 +16,12 @@ public class AgentSkillHit : MonoBehaviour
 
     WaitForSeconds popupcooltime = new WaitForSeconds(0.05f);
 
+    IHittable hit;
+
 
     private void Start()
     {
+        hit = GetComponent<IHittable>();
         data = DataManager.LoadJsonFile<PlayerJsonData>(Application.dataPath + "/SAVE/Player", "User");
     }
 
@@ -48,21 +51,27 @@ public class AgentSkillHit : MonoBehaviour
                     SkillDamage(600f);
                     StartCoroutine(FiveUP());
                     totalDamage = Damage * 5;
+
                 }
+                
             }
         }
+        Debug.Log("asd");
+        hit.OnGethit((int)totalDamage, null);
     }
     
     void ShowDamagePopup()
     {
         GameObject go = Managers.Resource.Instantiate("DamagePopup",transform);
         go.GetComponent<TextMesh>().text = Damage.ToString();
+
     }
 
     void SkillDamage(float value)
     {
         activeDamage = data.weaponStat.Damage + (data.weaponStat.Damage * activeskillUI.SkillDamagePercent);
         Damage = activeDamage * value;
+
     }
 
     void Skill()

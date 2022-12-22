@@ -14,11 +14,13 @@ public class Managers : MonoBehaviour
     SceneManagerEX _scene = new SceneManagerEX();
     ResourceManagers _resource = new ResourceManagers();
     TimeManager _time = new TimeManager();
+    EnemyKillManager _enemyKill = new EnemyKillManager();
     //Property
     public static PoolManager Pool { get { return Instance._pool; } }
     public static SceneManagerEX Scene { get { return Instance._scene; } }
     public static ResourceManagers Resource { get { return Instance._resource; } }
     public static  TimeManager TimeMa { get { return Instance._time; } }
+    public static EnemyKillManager Kill { get { return instance._enemyKill; } }
     #endregion
 
     #region Object
@@ -35,6 +37,7 @@ public class Managers : MonoBehaviour
         }
     }
     #endregion
+
 
 
     private void Start()
@@ -56,6 +59,7 @@ public class Managers : MonoBehaviour
 
             instance._pool.Init();
             instance._time.Init();
+            instance._enemyKill.Init();
         }
     }
     private void Update()
@@ -64,9 +68,8 @@ public class Managers : MonoBehaviour
     }
     static void Clear()
     {
+        Kill.Clear();
         Scene.Clear();
-
-
         Pool.Clear(); //항상 마지막에 클리어
     }
 }

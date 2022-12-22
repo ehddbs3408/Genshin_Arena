@@ -27,6 +27,7 @@ public class GameScene : BaseScene
     public void GameOver()
     {
         Debug.Log("GameOver");
+        Managers.Kill.GameOver();
         Managers.Scene.LoadScene(Define.Scene.Lobby);
     }
     public override void Clear()

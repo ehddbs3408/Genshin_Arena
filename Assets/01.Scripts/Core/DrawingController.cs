@@ -66,13 +66,6 @@ public class DrawingController : MonoBehaviour
             DrawingWeapon(idx);
 
             StartCoroutine(StarMotion(idx));
-
-            
-            
-        });
-        seq.AppendCallback(() =>
-        {
-
         });
     }
 
