@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 5722429899918088411}
   - component: {fileID: 5722429899918088410}
   - component: {fileID: 5722429899918088409}
-  - component: {fileID: 5900883989117618786}
+  - component: {fileID: 3557347850049610031}
   m_Layer: 9
   m_Name: MaceShadow
   m_TagString: Untagged
@@ -390,7 +390,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5900883989117618786
+--- !u!114 &3557347850049610031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5722429899918088408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f10e4a93bdfed478ca16836a6a90a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 93d8e8cb9a7df4144a7c817bf6de600e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamagePopupPrefab: {fileID: 131212003044346369, guid: 66827e6e1b9e3964d9690c3a2aed9298, type: 3}

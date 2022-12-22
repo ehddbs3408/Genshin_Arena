@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 5176416099798202465}
   - component: {fileID: 5176416099798202470}
   - component: {fileID: 5176416099798202471}
-  - component: {fileID: 1405470903216098415}
+  - component: {fileID: 2354415331941573453}
   m_Layer: 9
   m_Name: CrystalGolem
   m_TagString: Untagged
@@ -586,7 +586,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1405470903216098415
+--- !u!114 &2354415331941573453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5176416099798202468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f10e4a93bdfed478ca16836a6a90a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 81d9a0a46ea6bf849bd1596dbec35e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamagePopupPrefab: {fileID: 131212003044346369, guid: 66827e6e1b9e3964d9690c3a2aed9298, type: 3}
