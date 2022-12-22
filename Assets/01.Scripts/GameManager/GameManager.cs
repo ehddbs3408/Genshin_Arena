@@ -13,12 +13,13 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            
             if(PausePanel.activeSelf == true && backtomenu.activeSelf == false && setting.activeSelf == false)
             {
                 PausePanel.SetActive(false);
                 Time.timeScale = 1;
             }
-            else if(PausePanel.activeSelf == false)
+            if(PausePanel.activeSelf == false)
             {
                 PausePanel.SetActive(true);
                 Time.timeScale = 0;

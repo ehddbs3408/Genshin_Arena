@@ -26,6 +26,7 @@ public class GameScene : BaseScene
     }
     public void GameOver()
     {
+        Time.timeScale = 1f;
         Debug.Log("GameOver");
         PlayerPrefs.SetInt("GameOver", 1);
         Managers.Kill.GameOver();

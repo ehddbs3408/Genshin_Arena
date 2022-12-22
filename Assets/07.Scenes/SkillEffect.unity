@@ -3666,20 +3666,24 @@ PrefabInstance:
       value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
+      propertyPath: _waveDataList.Array.data[0].optionRandomPosSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[1].optionRandomPosSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[2].optionRandomPosSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[3].optionRandomPosSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[4].optionRandomPosSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271116, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _text
@@ -7192,9 +7196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a05af5725c7a8e418f95c497d8af169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PausePanel: {fileID: 0}
-  backtomenu: {fileID: 0}
-  setting: {fileID: 0}
+  PausePanel: {fileID: 10296287}
+  backtomenu: {fileID: 1137423661}
+  setting: {fileID: 1016430806}
 --- !u!4 &1138870957
 Transform:
   m_ObjectHideFlags: 0
@@ -7979,7 +7983,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
@@ -8211,7 +8215,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
@@ -10798,7 +10802,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
@@ -10838,7 +10842,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
