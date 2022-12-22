@@ -13,4 +13,9 @@ public class TimeManager
     {
         playTime += delta;
     }
+
+    public void Clear()
+    {
+        Init();
+    }
 }

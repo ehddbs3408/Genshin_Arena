@@ -43,6 +43,6 @@ public class EnemyKillManager
     }
     public void Clear()
     {
-        list = new EnemyKillJsonData();
+        Init();
     }
 }

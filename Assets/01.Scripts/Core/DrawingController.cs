@@ -89,9 +89,9 @@ public class DrawingController : MonoBehaviour
     private void DontEffect()
     {
         Sequence seq = DOTween.Sequence();
-        seq.Append(_drawingtext.rectTransform.DOShakeAnchorPos(0.3f, 50));
+        seq.Append(_drawingtext.rectTransform.DOShakeAnchorPos(0.3f, 20));
         seq.Join(_drawingtext.DOColor(Color.red, 0.3f));
-        seq.Append(_drawingtext.DOColor(Color.white, 0.3f));
+        seq.Append(_drawingtext.DOColor(Color.black, 0.3f));
 
     }
     private IEnumerator StarMotion(int count)
