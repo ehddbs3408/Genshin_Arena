@@ -72,10 +72,9 @@ public class WeaponSkill : MonoBehaviour
 
     [SerializeField] GameObject activeskillcooltimeui;
 
-    public static int weaponskillnum = 10;
-
     WaitForSeconds a = new WaitForSeconds(0.1f);
 
+    
     private float skillcooltime = 0f;
     private float nowskillcooltime = 0f;
 
@@ -84,14 +83,18 @@ public class WeaponSkill : MonoBehaviour
 
     private float activeskillcooltime = 15f;
     private float specialskillcooltime = 35f;
+
+    PlayerJsonData data; 
+
     public void Awake()
     {
+        data = DataManager.LoadJsonFile<PlayerJsonData>(Application.dataPath + "/SAVE/Player", "User");
 
-        if (weaponskillnum % 2 == 0)
+        if (data.weaponStat.id <= 4 )
         {
             nowskillcooltime = spearcooltime;
         }
-        else if(weaponskillnum % 2 != 0)
+        else if(data.weaponStat.id >= 5 && data.weaponStat.id <= 9)
         {
             nowskillcooltime = swordcooltime;
         }
@@ -165,28 +168,28 @@ public class WeaponSkill : MonoBehaviour
                 activeskillcooltimeui.SetActive(true);
                 activeskillUI.isactive = true;
                 
-                if (weaponskillnum == 5)
+                if (data.weaponStat.id == 2)
                 {
                     threestarswordeffect.func();
                     //공격력 %증가
                 }
-                else if (weaponskillnum == 6)
+                else if (data.weaponStat.id == 7)
                 {
                     Threestarspeareffect.func();
                 }
-                else if (weaponskillnum == 7)
+                else if (data.weaponStat.id == 3)
                 {
                     fourstarswordeffect.func();
                 }
-                else if (weaponskillnum == 8)
+                else if (data.weaponStat.id == 8)
                 {
                     fourstarspeareffect.func();
                 }
-                else if (weaponskillnum == 9)
+                else if (data.weaponStat.id == 4)
                 {
                     fivestarswordeffect.func();
                 }
-                else if (weaponskillnum == 10)
+                else if (data.weaponStat.id == 9)
                 {
                     fivestarspeareffect.func();
                 }
@@ -200,11 +203,11 @@ public class WeaponSkill : MonoBehaviour
         {
             if (specialskillcooltime > 35f)
             {
-                if (weaponskillnum == 9)
+                if (data.weaponStat.id == 4)
                 {
                     swordplayableDirector.Play();
                 }
-                else if (weaponskillnum == 10)
+                else if (data.weaponStat.id == 9)
                 {
                     spearplayabledirector.Play();
                 }
@@ -226,46 +229,49 @@ public class WeaponSkill : MonoBehaviour
                     transform.localScale = new Vector3(1, 1, 1);
                 }
 
-                switch (weaponskillnum)
+                switch (data.weaponStat.id)
                 {
-                    case 1:
+                    case 0:
                         StartCoroutine(onestarswordskillfunc());
                         break;
-                    case 2:
-                        StartCoroutine(onestarspearskillfunc());
-                        break;
-                    case 3:
+                    case 1:
                         StartCoroutine(twostarswordskillfunc());
                         break;
-                    case 4:
-                        StartCoroutine(twostarspearskillfunc());
-                        break;
-                    case 5:
+                    case 2:
                         StartCoroutine(threestarswordskillfunc());
                         break;
+                    case 3:
+                        StartCoroutine(fourstarswordskillfunc());
+                        break;
+                    case 4:
+                        StartCoroutine(fivestarswordskillfunc());
+                        break;
+                    case 5:
+                        StartCoroutine(onestarspearskillfunc());
+                        break;
                     case 6:
-                        StartCoroutine(threestarspearskillfunc());
+                        StartCoroutine(twostarspearskillfunc());
                         break;
                     case 7:
-                        StartCoroutine(fourstarswordskillfunc());
+                        StartCoroutine(threestarspearskillfunc());
                         break;
                     case 8:
                         StartCoroutine(fourstarspearskillfunc());
                         break;
                     case 9:
-                        StartCoroutine(fivestarswordskillfunc());
-                        break;
-                    case 10:
                         StartCoroutine(fivestarspearskillfunc());
                         break;
-                
-                        
+
                 }
                 skillcooltime = 0f;
 
             }
         }
     }
+
+    
+
+    //public void SkillDamage
 
     IEnumerator onestarswordskillfunc()
     {

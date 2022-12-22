@@ -1,0 +1,14 @@
+{
+    "level": 0,
+    "exp": 0.0,
+    "weaponStat": {
+        "id": 0,
+        "level": 0,
+        "weaponCt": {
+            "name": "",
+            "count": 0
+        },
+        "reforgecount": 0,
+        "Damage": 0
+    }
+}

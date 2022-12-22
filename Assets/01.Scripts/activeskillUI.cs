@@ -16,7 +16,14 @@ public class activeskillUI : MonoBehaviour
     private float activetime = 8f;
     public static bool isactive = false;
 
-    public void Update()
+    PlayerJsonData data;
+
+    private void Start()
+    {
+        data = DataManager.LoadJsonFile<PlayerJsonData>(Application.dataPath + "/SAVE/Player", "User");
+    }
+
+    private void Update()
     {
         if (isactive == true)
         {
