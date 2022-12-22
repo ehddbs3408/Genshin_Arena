@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2waveEnemyDamage
   m_EditorClassIdentifier: 
   damage: 10
-  attackDelay: 4
+  attackDelay: 5
   power: 0
   attackRange: 0
   stunTime: 0

@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 
 public class WeaponSkill : MonoBehaviour
 {
+    #region ¿Ã∆Â∆ÆµÈ
     [SerializeField] VisualEffect onestarswordskill;
 
     [SerializeField] VisualEffect onestarspearskill;
@@ -55,7 +56,9 @@ public class WeaponSkill : MonoBehaviour
     [SerializeField] VisualEffect fivestarspearskillfour;
     [SerializeField] VisualEffect fivestarspearskillfive;
     [SerializeField] VisualEffect fivestarspearskillsix;
+    #endregion
 
+    #region ƒ›∂Û¿Ã¥ıµÈ
     [SerializeField] GameObject onestarswordcol;
     [SerializeField] GameObject onestarspearcol;
     [SerializeField] GameObject twostarswordcol;
@@ -66,16 +69,19 @@ public class WeaponSkill : MonoBehaviour
     [SerializeField] GameObject fourstarspearcol;
     [SerializeField] GameObject fivestarswordcol;
     [SerializeField] GameObject fivestarspearcol;
+    #endregion
 
     [SerializeField] PlayableDirector swordplayableDirector;
     [SerializeField] PlayableDirector spearplayabledirector;
 
     [SerializeField] GameObject activeskillcooltimeui;
 
-    [SerializeField] AudioSource c;
+    private AudioSource audiosource;
+    [SerializeField] AudioClip[] audioclip;
 
     WaitForSeconds a = new WaitForSeconds(0.1f);
 
+    
     
     private float skillcooltime = 0f;
     private float nowskillcooltime = 0f;
@@ -90,6 +96,8 @@ public class WeaponSkill : MonoBehaviour
 
     public void Awake()
     {
+        audiosource = GetComponent<AudioSource>();
+
         data = DataManager.LoadJsonFile<PlayerJsonData>(Application.dataPath + "/SAVE/Player", "User");
 
         if (data.weaponStat.id <= 4 )
@@ -101,6 +109,7 @@ public class WeaponSkill : MonoBehaviour
             nowskillcooltime = swordcooltime;
         }
 
+        #region ¿Ã∆Â∆Æ ∏ÿ√„
         onestarswordskill.Stop();
 
         onestarspearskill.Stop();
@@ -152,7 +161,7 @@ public class WeaponSkill : MonoBehaviour
         fivestarspearskillfour.Stop();
         fivestarspearskillfive.Stop();
         fivestarspearskillsix.Stop();
-
+        #endregion
     }
 
 
@@ -233,33 +242,53 @@ public class WeaponSkill : MonoBehaviour
                 switch (data.weaponStat.id)
                 {
                     case 0:
+                        audiosource.clip = audioclip[1];
+                        audiosource.Play();
                         StartCoroutine(onestarswordskillfunc());
                         break;
                     case 1:
+                        audiosource.clip = audioclip[1];
+                        audiosource.Play();
                         StartCoroutine(twostarswordskillfunc());
                         break;
                     case 2:
+                        audiosource.clip = audioclip[1];
+                        audiosource.Play();
                         StartCoroutine(threestarswordskillfunc());
                         break;
                     case 3:
+                        audiosource.clip = audioclip[1];
+                        audiosource.Play();
                         StartCoroutine(fourstarswordskillfunc());
                         break;
                     case 4:
+                        audiosource.clip = audioclip[1];
+                        audiosource.Play();
                         StartCoroutine(fivestarswordskillfunc());
                         break;
                     case 5:
+                        audiosource.clip = audioclip[0];
+                        audiosource.Play();
                         StartCoroutine(onestarspearskillfunc());
                         break;
                     case 6:
+                        audiosource.clip = audioclip[0];
+                        audiosource.Play();
                         StartCoroutine(twostarspearskillfunc());
                         break;
                     case 7:
+                        audiosource.clip = audioclip[0];
+                        audiosource.Play();
                         StartCoroutine(threestarspearskillfunc());
                         break;
                     case 8:
+                        audiosource.clip = audioclip[0];
+                        audiosource.Play();
                         StartCoroutine(fourstarspearskillfunc());
                         break;
                     case 9:
+                        audiosource.clip = audioclip[0];
+                        audiosource.Play();
                         StartCoroutine(fivestarspearskillfunc());
                         break;
 
@@ -270,7 +299,22 @@ public class WeaponSkill : MonoBehaviour
         }
     }
 
-    
+    public void SwordSound()
+    {
+        audiosource.clip = audioclip[2];
+        audiosource.Play();
+    }
+    public void SpearSound()
+    {
+        audiosource.clip = audioclip[3];
+        audiosource.Play();
+    }
+    public void SpearWeaponSound()
+    {
+        audiosource.clip = audioclip[0];
+        audiosource.Play();
+    }
+
 
     //public void SkillDamage
 
