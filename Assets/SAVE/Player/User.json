@@ -2,11 +2,11 @@
     "level": 0,
     "exp": 0.0,
     "weaponStat": {
-        "id": 7,
+        "id": 0,
         "level": 0,
         "weaponCt": {
-            "name": "용광창",
-            "count": 2
+            "name": "만월검",
+            "count": 11
         },
         "reforgecount": 3,
         "Damage": 100
