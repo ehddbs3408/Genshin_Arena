@@ -660,4 +660,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f487c3e2182c24698972b293f51f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamagePopupPrefab: {fileID: 0}
+  DamagePopupPrefab: {fileID: 131212003044346369, guid: 66827e6e1b9e3964d9690c3a2aed9298, type: 3}
