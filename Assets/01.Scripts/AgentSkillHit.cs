@@ -6,20 +6,19 @@ public class AgentSkillHit : MonoBehaviour
 {
     [SerializeField] private GameObject DamagePopupPrefab;
 
-    public static float addDamage;
+    private float activeDamage = 0;
 
-    private float Damage;
+    private float Damage = 0;
 
     PlayerJsonData data;
 
+    WaitForSeconds popupcooltime = new WaitForSeconds(0.05f);
 
 
     private void Start()
     {
         data = DataManager.LoadJsonFile<PlayerJsonData>(Application.dataPath + "/SAVE/Player", "User");
     }
-
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,7 +27,6 @@ public class AgentSkillHit : MonoBehaviour
             if (DamagePopupPrefab != null)
             {
                 Skill();
-                ShowDamagePopup();
             }
         }
     }
@@ -41,8 +39,8 @@ public class AgentSkillHit : MonoBehaviour
 
     void SkillDamage(float value)
     {
-        
-        Damage = data.weaponStat.Damage * value;
+        activeDamage = data.weaponStat.Damage + (data.weaponStat.Damage * activeskillUI.SkillDamagePercent);
+        Damage = activeDamage * value;
     }
 
     void Skill()
@@ -51,37 +49,125 @@ public class AgentSkillHit : MonoBehaviour
         {
             case 0:
                 SkillDamage(120f);
+                StartCoroutine(TwoUP());
                 break;
             case 1:
                 SkillDamage(160f);
+                StartCoroutine(ThreeUP());
                 break;
             case 2:
                 SkillDamage(210f);
+                StartCoroutine(ThreeUP());
                 break;
             case 3:
                 SkillDamage(250f);
+                StartCoroutine(FourUP());
                 break;
             case 4:
                 SkillDamage(300f);
+                StartCoroutine(FiveUP());
                 break;
             case 5:
                 SkillDamage(70f);
+                StartCoroutine(ThreeUP());
                 break;
             case 6:
                 SkillDamage(110f);
+                StartCoroutine(FourUP());
                 break;
             case 7:
                 SkillDamage(160f);
+                StartCoroutine(FourUP());
                 break;
             case 8:
                 SkillDamage(160f);
+                StartCoroutine(SixUP());
                 break;
             case 9:
                 SkillDamage(210f);
+                StartCoroutine(SevenUP());
                 break;
-
-
 
         }
     }
+
+    IEnumerator TwoUP()
+    {
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+
+    }
+    IEnumerator ThreeUP()
+    {
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+
+    }
+    IEnumerator FourUP()
+    {
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+
+    }
+
+    IEnumerator FiveUP()
+    {
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+
+    }
+
+    IEnumerator SixUP()
+    {
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+
+    }
+
+    IEnumerator SevenUP()
+    {
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+        yield return popupcooltime;
+        ShowDamagePopup();
+
+    }
+
+
+
+
 }

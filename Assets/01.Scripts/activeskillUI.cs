@@ -12,7 +12,8 @@ public class activeskillUI : MonoBehaviour
 
     public static Action func;
 
-    
+    public static float SkillDamagePercent = 0;
+
     private float activetime = 8f;
     public static bool isactive = false;
 
@@ -28,11 +29,23 @@ public class activeskillUI : MonoBehaviour
         if (isactive == true)
         {
             activetime -= Time.deltaTime;
-
+            if(data.weaponStat.id == 2 || data.weaponStat.id == 7)
+            {
+                SkillDamagePercent = 11f;
+            }
+            else if(data.weaponStat.id == 3 || data.weaponStat.id == 8)
+            {
+                SkillDamagePercent = 21f;
+            }
+            else if(data.weaponStat.id == 4|| data.weaponStat.id == 9)
+            {
+                SkillDamagePercent = 30f;
+            }
             Cooltimestart(activetime);
         }
         if(activetime < 0)
         {
+            SkillDamagePercent = 0f;
             gameObject.SetActive(false);
             isactive = false;
             activetime = 8;

@@ -1,0 +1,14 @@
+{
+    "level": 0,
+    "exp": 0.0,
+    "weaponStat": {
+        "id": 8,
+        "level": 0,
+        "weaponCt": {
+            "name": "방천화극창",
+            "count": 1
+        },
+        "reforgecount": 3,
+        "Damage": 100
+    }
+}

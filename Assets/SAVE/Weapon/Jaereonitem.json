@@ -1,24 +1,24 @@
 {
     "list": [
         {
-            "reforgestarlevel": 4,
-            "cnt": 28
-        },
-        {
             "reforgestarlevel": 0,
-            "cnt": 20
+            "cnt": 14
         },
         {
             "reforgestarlevel": 1,
-            "cnt": 15
+            "cnt": 12
         },
         {
             "reforgestarlevel": 2,
-            "cnt": 4
+            "cnt": 14
+        },
+        {
+            "reforgestarlevel": 4,
+            "cnt": 6
         },
         {
             "reforgestarlevel": 3,
-            "cnt": 0
+            "cnt": 7
         }
     ]
 }

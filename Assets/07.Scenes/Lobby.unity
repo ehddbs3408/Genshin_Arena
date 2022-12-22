@@ -5367,22 +5367,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 223973601}
     m_Modifications:
-    - target: {fileID: 707823019416281219, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 126237507, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 995059093692556680, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 447287649, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_text
+      value: "\uD2B9\uC218 \uC2A4\uD0AC(C) : \n\uD558\uB298\uC5D0\uC11C 5\uAC1C\uC758
+        \uCC3D\uC774 \uB5A8\uC5B4\uC838 \uAC01\uAC01\uC758 \uCC3D \uB9C8\uB2E4 600%\uC758
+        \uC2A4\uD0AC\uB370\uBBF8\uC9C0\uB85C 5\uBC88\uACF5\uACA9\uD55C\uB2E4 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628980381, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8426004641405641861, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 1708548135, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8426004641405641861, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 751022614}
+    - target: {fileID: 1973927248, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 258745902318893349, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 863772025267561692, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817614417674547382, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993139270347824795, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741295528078574977, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284195348360947118, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_text
+      value: "\uD2B9\uC218 \uC2A4\uD0AC (C) : \n\uB450\uAC1C\uC758 \uCE7C\uC774 \uCC3D\uACF5\uC744
+        \uAC00\uB974\uBA70  \uBAA8\uB4E0 \uBAAC\uC2A4\uD130\uC5D0\uAC8C 200%\uC758
+        \uC2A4\uD0AC\uB370\uBBF8\uC9C0\uB85C 3\uBC88 \uACF5\uACA9\uD55C\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426004642083761083, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8426004642108332182, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5471,8 +5507,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Equip Item Panel
       objectReference: {fileID: 0}
-    - target: {fileID: 8898330137130266247, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 8426004642108332183, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

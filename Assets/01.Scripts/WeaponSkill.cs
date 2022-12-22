@@ -171,7 +171,7 @@ public class WeaponSkill : MonoBehaviour
                 if (data.weaponStat.id == 2)
                 {
                     threestarswordeffect.func();
-                    //공격력 %증가
+                    
                 }
                 else if (data.weaponStat.id == 7)
                 {
