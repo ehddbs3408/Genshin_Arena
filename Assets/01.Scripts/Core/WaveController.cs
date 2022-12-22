@@ -88,7 +88,8 @@ public class WaveController : MonoBehaviour
 
         _waveText.text = _currentWaveData.waveName;
         _overEnemyText.text = string.Format("OverEnemyCount {0}", _currentWaveData.waveMaxEnemyCount.ToString());
-;
+
+        Managers.Kill.EndWave(_currentWaveIdx+1);
         _spawner.SetSpawnGruop(_currentWaveData.waveName);
     }
 }

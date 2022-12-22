@@ -33,10 +33,13 @@ public abstract class EnemyUnit : MonoBehaviour, IHittable, IKnockBack, IStun
         Debug.Log($"hit : {gameObject.name}");
         Health -= damaged;
 
-        if (Health < 0)
+        if (Health <= 0)
         {
             OnDead();
         }
+        Collider other;
+        IHittable hit = other.transform.GetComponent<IHittable>();
+        hit.OnGethit(100, gameObject);
     }
     #endregion
 
