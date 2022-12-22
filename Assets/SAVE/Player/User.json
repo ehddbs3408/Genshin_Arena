@@ -5,10 +5,10 @@
         "id": 0,
         "level": 0,
         "weaponCt": {
-            "name": "",
-            "count": 0
+            "name": "만월검",
+            "count": 1
         },
-        "reforgecount": 0,
-        "Damage": 0
+        "reforgecount": 3,
+        "Damage": 100
     }
 }
