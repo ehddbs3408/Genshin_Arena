@@ -27,8 +27,7 @@ public class DamagePopupText : MonoBehaviour
     public void Die()
     {
         seq.Kill();
-        Debug.Log("QWESDZCXCQWEDAVDS");
-        gameObject.SetActive(false);
+        transform.gameObject.SetActive(false);
         Managers.Resource.Destroy(gameObject);
     }
 }

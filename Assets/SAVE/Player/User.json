@@ -2,10 +2,10 @@
     "level": 0,
     "exp": 0.0,
     "weaponStat": {
-        "id": 5,
+        "id": 1,
         "level": 0,
         "weaponCt": {
-            "name": "반월창",
+            "name": "칠성검",
             "count": 1
         },
         "reforgecount": 3,
