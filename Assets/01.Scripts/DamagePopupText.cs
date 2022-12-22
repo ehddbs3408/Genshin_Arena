@@ -21,6 +21,7 @@ public class DamagePopupText : MonoBehaviour
 
     public void Die()
     {
+        DOTween.KillAll();
         Managers.Resource.Destroy(this.gameObject);
     }
 }

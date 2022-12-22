@@ -39,6 +39,7 @@ public class Managers : MonoBehaviour
     #endregion
 
 
+
     private void Start()
     {
         Init();
@@ -58,6 +59,7 @@ public class Managers : MonoBehaviour
 
             instance._pool.Init();
             instance._time.Init();
+            instance._enemyKill.Init();
         }
     }
     private void Update()

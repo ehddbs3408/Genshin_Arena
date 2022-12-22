@@ -37,9 +37,6 @@ public abstract class EnemyUnit : MonoBehaviour, IHittable, IKnockBack, IStun
         {
             OnDead();
         }
-        Collider other;
-        IHittable hit = other.transform.GetComponent<IHittable>();
-        hit.OnGethit(100, gameObject);
     }
     #endregion
 
@@ -50,6 +47,8 @@ public abstract class EnemyUnit : MonoBehaviour, IHittable, IKnockBack, IStun
         _unitAttack = GetComponent<UnitAttack>();
         _boxCol = GetComponent<BoxCollider>();
         _header = GetComponent<AIHeader>();
+
+        Init();
     }
 
     public void Init()
@@ -63,6 +62,7 @@ public abstract class EnemyUnit : MonoBehaviour, IHittable, IKnockBack, IStun
     {
         Debug.Log("KnockBack");
         //_agentMovement.StopMovement(duration);
+
         Vector3 vec = new Vector3(dir.x, 0, dir.z);
         _agentMovement.Dash(vec, power);
 

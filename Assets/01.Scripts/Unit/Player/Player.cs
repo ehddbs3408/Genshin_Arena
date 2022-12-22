@@ -34,7 +34,8 @@ public class Player : Unit
         Debug.Log(gameObject.name + " : Dead");
         _agentMovement.MovementStopFlag();
         _agentSpriteRenderer.SpriteRendererFlag();
-        Managers.Scene.LoadScene(Define.Scene.Lobby);
+        GameScene scene = Managers.Scene.CurrentScene as GameScene;
+        scene.GameOver();
     }
     public void Damaged(bool a)
     {
