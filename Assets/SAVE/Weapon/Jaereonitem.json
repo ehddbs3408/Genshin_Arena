@@ -1,16 +1,3 @@
 {
-    "list": [
-        {
-            "reforgestarlevel": 1,
-            "cnt": 6
-        },
-        {
-            "reforgestarlevel": 0,
-            "cnt": 8
-        },
-        {
-            "reforgestarlevel": 2,
-            "cnt": 0
-        }
-    ]
+    "list": []
 }
