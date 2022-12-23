@@ -8145,6 +8145,16 @@ PrefabInstance:
         \uCC3D\uC774 \uB5A8\uC5B4\uC838 \uAC01\uAC01\uC758 \uCC3D \uB9C8\uB2E4 600%\uC758
         \uC2A4\uD0AC\uB370\uBBF8\uC9C0\uB85C 5\uBC88\uACF5\uACA9\uD55C\uB2E4 "
       objectReference: {fileID: 0}
+    - target: {fileID: 672519608, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_text
+      value: "\uC2A4\uD0AC (X) : \n250%\uC758 \uC2A4\uD0AC\uB370\uBBF8\uC9C0\uB85C
+        7\uBC88 \uACF5\uACA9\uD55C\uB2E4 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 871751558, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
+      propertyPath: m_text
+      value: "\uC2A4\uD0AC (X) : \n210%\uC758 \uC2A4\uD0AC\uB370\uBBF8\uC9C0\uB85C
+        6\uBC88 \uACF5\uACA9\uD55C\uB2E4 "
+      objectReference: {fileID: 0}
     - target: {fileID: 1628980381, guid: 7a09fa5d9830d584dae8e60803aa515c, type: 3}
       propertyPath: m_IsActive
       value: 0

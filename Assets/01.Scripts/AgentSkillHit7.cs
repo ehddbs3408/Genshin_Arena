@@ -119,12 +119,12 @@ public class AgentSkillHit7 : MonoBehaviour
                 totalDamage = Damage * 4;
                 break;
             case 8:
-                SkillDamage(160f);
+                SkillDamage(210f);
                 StartCoroutine(SixUP());
                 totalDamage = Damage * 6;
                 break;
             case 9:
-                SkillDamage(210f);
+                SkillDamage(250f);
                 StartCoroutine(SevenUP());
                 totalDamage = Damage * 7;
                 break;

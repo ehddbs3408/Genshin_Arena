@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b8e7a0069b8934ba8af2352b5f15a6, type: 3}
   m_Name: 3waveEnemyHp
   m_EditorClassIdentifier: 
-  maxHp: 600000
+  maxHp: 400000
   maxStamina: 0
   stunResistance: 0
   knockBackResistance: 0
