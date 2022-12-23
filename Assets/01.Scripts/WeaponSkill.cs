@@ -176,32 +176,41 @@ public class WeaponSkill : MonoBehaviour
         {
             if (activeskillcooltime > 15f)
             {
-                activeskillcooltimeui.SetActive(true);
-                activeskillUI.isactive = true;
                 
                 if (data.weaponStat.id == 2)
                 {
+                    activeskillcooltimeui.SetActive(true);
+                    activeskillUI.isactive = true;
                     threestarswordeffect.func();
-                    
                 }
                 else if (data.weaponStat.id == 7)
                 {
+                    activeskillcooltimeui.SetActive(true);
+                    activeskillUI.isactive = true;
                     Threestarspeareffect.func();
                 }
                 else if (data.weaponStat.id == 3)
                 {
+                    activeskillcooltimeui.SetActive(true);
+                    activeskillUI.isactive = true;
                     fourstarswordeffect.func();
                 }
                 else if (data.weaponStat.id == 8)
                 {
+                    activeskillcooltimeui.SetActive(true);
+                    activeskillUI.isactive = true;
                     fourstarspeareffect.func();
                 }
                 else if (data.weaponStat.id == 4)
                 {
+                    activeskillcooltimeui.SetActive(true);
+                    activeskillUI.isactive = true;
                     fivestarswordeffect.func();
                 }
                 else if (data.weaponStat.id == 9)
                 {
+                    activeskillcooltimeui.SetActive(true);
+                    activeskillUI.isactive = true;
                     fivestarspeareffect.func();
                 }
                 activeskillcooltime = 0f;
