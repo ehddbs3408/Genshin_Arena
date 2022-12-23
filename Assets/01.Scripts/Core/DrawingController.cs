@@ -85,7 +85,37 @@ public class DrawingController : MonoBehaviour
             PlayerPrefs.SetInt("Drawing", drawing);
         });
     }
+    public void DrawingMAxMotion()
+    {
 
+        if (drawing < 1)
+        {
+            DontEffect();
+            return;
+        }
+
+        Sequence seq = DOTween.Sequence();
+        seq.AppendCallback(() => {
+            _drawingPanel.enabled = true;
+            _drawingEffect.localScale = Vector3.zero;
+        });
+        seq.Append(_drawingEffect.DOScale(6, 1.5f));
+        seq.Join(_drawingEffect.DOShakeRotation(1.5f, 360, 0));
+        seq.Append(_drawingPanel.DOColor(Color.white, 0.5f));
+        seq.AppendCallback(() =>
+        {
+            int idx = DrawingWeaponPossibility();
+            _waeponImage.enabled = true;
+            _waeponNamePanel.SetActive(true);
+
+            //_weaponNameText.text = idx.ToString();
+            DrawingWeapon(4);
+
+            StartCoroutine(StarMotion(4));
+            drawing--;
+            PlayerPrefs.SetInt("Drawing", drawing);
+        });
+    }
     private void DontEffect()
     {
         Sequence seq = DOTween.Sequence();

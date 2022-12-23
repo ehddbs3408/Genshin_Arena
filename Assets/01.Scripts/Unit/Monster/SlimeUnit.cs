@@ -13,6 +13,7 @@ public class SlimeUnit : EnemyUnit
     public override void OnDead()
     {
         _header.isDead = true;
+        _agentMovement.StopMovement();
         _animator.OnTriggerDeadAnimation();
         StartCoroutine(DeadCoruotine());
     }

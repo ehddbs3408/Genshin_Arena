@@ -1,34 +1,3 @@
 {
-    "list": [
-        {
-            "id": 0,
-            "level": 0,
-            "weaponCt": {
-                "name": "만월검",
-                "count": 1
-            },
-            "reforgecount": 3,
-            "Damage": 100
-        },
-        {
-            "id": 5,
-            "level": 0,
-            "weaponCt": {
-                "name": "반월창",
-                "count": 1
-            },
-            "reforgecount": 3,
-            "Damage": 100
-        },
-        {
-            "id": 6,
-            "level": 0,
-            "weaponCt": {
-                "name": "호마창",
-                "count": 0
-            },
-            "reforgecount": 3,
-            "Damage": 100
-        }
-    ]
+    "list": []
 }

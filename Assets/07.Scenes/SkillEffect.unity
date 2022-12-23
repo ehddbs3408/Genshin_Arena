@@ -3627,7 +3627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[0].waveMaxEnemyCount
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[0].waveNextStartTime
@@ -3635,7 +3635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[1].waveMaxEnemyCount
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[1].waveNextStartTime
@@ -3643,7 +3643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[2].waveMaxEnemyCount
-      value: 25
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[2].waveNextStartTime
@@ -3651,7 +3651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[3].waveMaxEnemyCount
-      value: 35
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[3].waveNextStartTime
@@ -3659,27 +3659,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[4].waveMaxEnemyCount
-      value: 35
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[4].waveNextStartTime
       value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
+      propertyPath: _waveDataList.Array.data[0].optionRandomPosSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[1].optionRandomPosSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[2].optionRandomPosSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[3].optionRandomPosSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[4].optionRandomPosSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271116, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _text
@@ -7172,7 +7176,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1138870957}
-  - component: {fileID: 1138870956}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7180,21 +7183,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1138870956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138870955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a05af5725c7a8e418f95c497d8af169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PausePanel: {fileID: 0}
-  backtomenu: {fileID: 0}
-  setting: {fileID: 0}
 --- !u!4 &1138870957
 Transform:
   m_ObjectHideFlags: 0
@@ -7957,18 +7945,6 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 593550304825101292}
-          m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
-          m_MethodName: MovementStopFlag
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 593550304825101294}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: Damaged
@@ -7979,22 +7955,10 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
     - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 593550304825101292}
-          m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
-          m_MethodName: MovementStopFlag
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 410019136}
@@ -8211,7 +8175,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
@@ -10474,8 +10438,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 30, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 30, y: 30, z: 21.847157}
+  m_Center: {x: 0, y: 0, z: -0.92357874}
 --- !u!4 &1464597956
 Transform:
   m_ObjectHideFlags: 0
@@ -10761,33 +10725,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 593550304825101292}
-          m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
-          m_MethodName: MovementStopFlag
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+        m_Calls: []
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 593550304825101292}
-          m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
-          m_MethodName: MovementStopFlag
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 593550304825101294}
           m_TargetAssemblyTypeName: Player, Assembly-CSharp
           m_MethodName: Damaged
@@ -10798,7 +10738,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
@@ -10838,7 +10778,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
@@ -15387,7 +15327,7 @@ BoxCollider:
   m_GameObject: {fileID: 593550304825101281}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.64002204, y: 1.0795048, z: 1}
   m_Center: {x: -0.031166613, y: 0.68706924, z: 0}

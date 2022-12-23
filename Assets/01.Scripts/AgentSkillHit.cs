@@ -35,7 +35,7 @@ public class AgentSkillHit : MonoBehaviour
             }
         }
 
-        else if(other.gameObject.CompareTag("SpecialSkill"))
+         if(other.gameObject.CompareTag("SpecialSkill"))
         {
             if(DamagePopupPrefab != null)
             {

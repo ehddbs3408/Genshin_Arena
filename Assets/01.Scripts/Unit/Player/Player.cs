@@ -47,6 +47,8 @@ public class Player : Unit
         
         if (_isDamaged) return;
 
+        StartCoroutine(DamgedDelay(1f));
+
         Debug.Log(this.gameObject.name + " : " + damaged + " Damage");
 
         Health -= damaged;

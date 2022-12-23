@@ -20,6 +20,7 @@ public class EnemyKillManager
         list.enemyKillList.Add(_currentKillData);
         string json = DataManager.ObjectToJson(list);
         DataManager.SaveJsonFile(Application.dataPath + "/SAVE/Wave", "KillData", json);
+        Init();
     }
     public void StartWave()
     {
