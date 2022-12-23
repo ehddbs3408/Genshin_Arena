@@ -96,7 +96,9 @@ public class GetItemController : MonoBehaviour
                 count++;
         }
         _drawingText.text = count.ToString();
-        PlayerPrefs.SetInt("Drawing", count);
+
+        int drawing = PlayerPrefs.GetInt("Drawing") + count;
+        PlayerPrefs.SetInt("Drawing", drawing);
     }
 
     private void GetItem(int wave,int cnt)
