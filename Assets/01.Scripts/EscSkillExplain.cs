@@ -5,11 +5,19 @@ using UnityEngine;
 public class EscSkillExplain : MonoBehaviour
 {
     [SerializeField] GameObject[] list;
+    [SerializeField] GameObject setting;
+    [SerializeField] GameObject volumeSetting;
+    [SerializeField] GameObject EquipItemPanel;
+    [SerializeField] GameObject CharacterInfo;
+    [SerializeField] GameObject DrawingWeaponPanel;
+
+    bool explainPanelactive = false;
 
     int isclick = 0;
 
     public void Click()
     {
+        
         isclick = 1;
     }
     public void Click1()
@@ -21,15 +29,32 @@ public class EscSkillExplain : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            for(int i = 0; i < list.Length; i++)
+            
+            if (setting.activeSelf == true && volumeSetting.activeSelf == false)
             {
-                list[i].SetActive(false);
-                
+                setting.SetActive(false);
             }
-            isclick++;
+            else if (setting.activeSelf == false && EquipItemPanel.activeSelf == false && CharacterInfo.activeSelf == false && DrawingWeaponPanel.activeSelf == false)
+            {
+                setting.SetActive(true);
+            }
+            else if(volumeSetting.activeSelf == true)
+            {
+                volumeSetting.SetActive(false);
+            }
+
+            if (setting.activeSelf == false && EquipItemPanel.activeSelf == true)
+            {
+                for (int i = 0; i < list.Length; i++)
+                {
+                    list[i].SetActive(false);
+                }
+                isclick++;
+            }
+
             if (isclick == 2)
             {
-                transform.gameObject.SetActive(false);
+                EquipItemPanel.gameObject.SetActive(false);
                 isclick = 0;
             }
         }

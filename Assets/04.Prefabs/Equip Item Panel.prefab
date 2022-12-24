@@ -15891,7 +15891,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
@@ -16534,7 +16534,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
@@ -17511,7 +17511,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
@@ -17781,7 +17781,6 @@ GameObject:
   - component: {fileID: 8426004642108332182}
   - component: {fileID: 8426004642108332184}
   - component: {fileID: 8426004642108332185}
-  - component: {fileID: 1063075803}
   - component: {fileID: 1063075806}
   m_Layer: 5
   m_Name: Equip Item Panel
@@ -17852,29 +17851,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1063075803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8426004642108332183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee4562df075c4d944aabf0186375f35e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  list:
-  - {fileID: 8426004642083761083}
-  - {fileID: 863772025267561692}
-  - {fileID: 2741295528078574977}
-  - {fileID: 1817614417674547382}
-  - {fileID: 1993139270347824795}
-  - {fileID: 258745902318893349}
-  - {fileID: 1628980381}
-  - {fileID: 126237507}
-  - {fileID: 1973927248}
-  - {fileID: 1708548135}
 --- !u!114 &1063075806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18032,7 +18008,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
@@ -18190,7 +18166,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
@@ -18485,7 +18461,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
@@ -19082,7 +19058,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
@@ -19738,7 +19714,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
@@ -19896,7 +19872,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1
@@ -20189,7 +20165,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1063075803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EscSkillExplain, Assembly-CSharp
         m_MethodName: Click1
         m_Mode: 1

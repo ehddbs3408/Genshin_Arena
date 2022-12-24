@@ -102,11 +102,11 @@ public class WeaponSkill : MonoBehaviour
 
         if (data.weaponStat.id <= 4 )
         {
-            nowskillcooltime = spearcooltime;
+            nowskillcooltime = swordcooltime;
         }
         else if(data.weaponStat.id >= 5 && data.weaponStat.id <= 9)
         {
-            nowskillcooltime = swordcooltime;
+            nowskillcooltime = spearcooltime;
         }
 
         #region ÀÌÆåÆ® ¸ØÃã

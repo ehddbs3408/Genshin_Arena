@@ -1,0 +1,44 @@
+{
+    "list": [
+        {
+            "id": 0,
+            "level": 1,
+            "weaponCt": {
+                "name": "만월검",
+                "count": 5
+            },
+            "reforgecount": 3,
+            "Damage": 124
+        },
+        {
+            "id": 5,
+            "level": 1,
+            "weaponCt": {
+                "name": "반월창",
+                "count": 3
+            },
+            "reforgecount": 3,
+            "Damage": 124
+        },
+        {
+            "id": 4,
+            "level": 1,
+            "weaponCt": {
+                "name": "찰나의 덧없는 삶",
+                "count": 2
+            },
+            "reforgecount": 3,
+            "Damage": 161
+        },
+        {
+            "id": 9,
+            "level": 3,
+            "weaponCt": {
+                "name": "흩날리는 부세의 풍경",
+                "count": 3
+            },
+            "reforgecount": 3,
+            "Damage": 283
+        }
+    ]
+}
