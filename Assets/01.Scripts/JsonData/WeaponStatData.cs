@@ -8,7 +8,7 @@ public class WeaponStat
     public int level;
     public WeaponCnt weaponCt;
     public int reforgecount;
-    public int Damage;
+    public int Damage = 100;
 }
 
 public class WeaponStatData

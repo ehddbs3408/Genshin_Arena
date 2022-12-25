@@ -71,7 +71,7 @@ public class Managers : MonoBehaviour
     }
     private void Update()
     {
-        instance._time.OnUpdate(Time.deltaTime);
+        instance._time.OnUpdate(Time.deltaTime*0.5f);
     }
     static void Clear()
     {

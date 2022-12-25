@@ -15217,43 +15217,7 @@ MonoBehaviour:
         m_CallState: 2
   OnAttackKeyInput:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 593550304825101294}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 593550305953278003}
-        m_TargetAssemblyTypeName: AgentAnimation, Assembly-CSharp
-        m_MethodName: OnTriggerAttackAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 593550305829275633}
-        m_TargetAssemblyTypeName: AgentAnimation, Assembly-CSharp
-        m_MethodName: OnTriggerAttackAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnDashkeyInput:
     m_PersistentCalls:
       m_Calls:

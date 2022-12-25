@@ -2,23 +2,11 @@
     "list": [
         {
             "reforgestarlevel": 0,
-            "cnt": 39
+            "cnt": 4
         },
         {
             "reforgestarlevel": 1,
-            "cnt": 46
-        },
-        {
-            "reforgestarlevel": 2,
-            "cnt": 50
-        },
-        {
-            "reforgestarlevel": 3,
-            "cnt": 35
-        },
-        {
-            "reforgestarlevel": 4,
-            "cnt": 2
+            "cnt": 0
         }
     ]
 }
