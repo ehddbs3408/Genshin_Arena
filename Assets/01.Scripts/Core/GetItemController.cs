@@ -87,7 +87,7 @@ public class GetItemController : MonoBehaviour
 
     private void GetDrawingItem(int cnt)
     {
-        int chance = 60;
+        int chance = 30;
         int count = 0;
         for (int i = 0; i < cnt; i++)
         {

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2936b31eb6219f949af4d174a5233953, type: 3}
   m_Name: DragonSpeed
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 6
   dashPower: 0
