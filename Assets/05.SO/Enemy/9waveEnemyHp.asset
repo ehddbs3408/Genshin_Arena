@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10eb3539b2fc4c44ba3212c3b25d202e, type: 3}
-  m_Name: 4waveEnemyDamage
+  m_Script: {fileID: 11500000, guid: 47b8e7a0069b8934ba8af2352b5f15a6, type: 3}
+  m_Name: 9waveEnemyHp
   m_EditorClassIdentifier: 
-  damage: 16
-  attackDelay: 4
-  power: 0
-  attackRange: 0
-  stunTime: 0
+  maxHp: 1898400
+  maxStamina: 0
+  stunResistance: 0
+  knockBackResistance: 0

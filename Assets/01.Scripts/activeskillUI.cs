@@ -31,15 +31,15 @@ public class activeskillUI : MonoBehaviour
             activetime -= Time.deltaTime;
             if(data.weaponStat.id == 2 || data.weaponStat.id == 7)
             {
-                SkillDamagePercent = 11f;
+                SkillDamagePercent = 0.11f;
             }
             else if(data.weaponStat.id == 3 || data.weaponStat.id == 8)
             {
-                SkillDamagePercent = 21f;
+                SkillDamagePercent = 0.21f;
             }
             else if(data.weaponStat.id == 4|| data.weaponStat.id == 9)
             {
-                SkillDamagePercent = 30f;
+                SkillDamagePercent = 0.3f;
             }
             Cooltimestart(activetime);
         }

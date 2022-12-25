@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47b8e7a0069b8934ba8af2352b5f15a6, type: 3}
-  m_Name: 2waveEnemyHp
+  m_Name: 6waveEnemyHp
   m_EditorClassIdentifier: 
-  maxHp: 258300
+  maxHp: 1195500
   maxStamina: 0
   stunResistance: 0
   knockBackResistance: 0

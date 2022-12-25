@@ -11,7 +11,7 @@ public class DamagePopupText : MonoBehaviour
     private void Start()
     {
         Init();
-        ;
+        
     }
     private void OnEnable()
     {
@@ -22,8 +22,8 @@ public class DamagePopupText : MonoBehaviour
         Sequence seq = DOTween.Sequence();
 
         seq.Append(transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1)).Join(transform.DOMoveY(5f, 1));
-        seq.Append(_text.DOColor(new Color(0,0,0,0),0.2f));
-        
+        seq.Append(_text.DOColor(new Color(0,0,0,0),1f));
+        Debug.Log("けいしかいしぉ");
         seq.AppendCallback(Die);
     }
 

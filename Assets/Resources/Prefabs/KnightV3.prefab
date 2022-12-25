@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 8825384717371356054}
   - component: {fileID: 8825384717371356055}
   - component: {fileID: 8825384717371356048}
-  - component: {fileID: 8825384717371356049}
+  - component: {fileID: 8584720634726728759}
   m_Layer: 9
   m_Name: KnightV3
   m_TagString: Untagged
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637fa69803713f44e9bef21438a8bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitData: {fileID: 11400000, guid: 89bcb186f1854b54bb3d4f40a4aa6b9d, type: 2}
+  _unitData: {fileID: 11400000, guid: 9d4f78091f0bce04bac065d81f7e21c1, type: 2}
   _basePosition: {fileID: 0}
   _isActive: 1
 --- !u!114 &8825384717371356052
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594e9ed5131dc7e44869675dacd2a593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movenetData: {fileID: 11400000, guid: 235740ca9f846ef46a7d57caef748a70, type: 2}
+  _movenetData: {fileID: 11400000, guid: 3440a230c66703349a07b2af26fad108, type: 2}
   rigidbodyPath: 
 --- !u!114 &8825384717371356054
 MonoBehaviour:
@@ -388,7 +388,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &8825384717371356049
+--- !u!114 &8584720634726728759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8825384717371356050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95f487c3e2182c24698972b293f51f8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 57f10e4a93bdfed478ca16836a6a90a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamagePopupPrefab: {fileID: 131212003044346369, guid: 66827e6e1b9e3964d9690c3a2aed9298, type: 3}

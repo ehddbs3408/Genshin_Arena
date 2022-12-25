@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bab02a76ed81a4f94213a9483e8c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDataSO: {fileID: 11400000, guid: 99539db40caccba4090619a2370a3f44, type: 2}
+  _attackDataSO: {fileID: 11400000, guid: 69fc8d24716c9464ea71baf50653e790, type: 2}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8094193119941366135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28c4897a30b17ae4db0f12b3c57647d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 57f10e4a93bdfed478ca16836a6a90a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamagePopupPrefab: {fileID: 131212003044346369, guid: 66827e6e1b9e3964d9690c3a2aed9298, type: 3}

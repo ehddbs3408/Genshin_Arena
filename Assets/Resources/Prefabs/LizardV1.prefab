@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 2249425716781677393}
   - component: {fileID: 9223264595431820367}
   - component: {fileID: 8877877131083177714}
-  - component: {fileID: 3911406909594316206}
+  - component: {fileID: 6332796219265124165}
   m_Layer: 9
   m_Name: LizardV1
   m_TagString: Untagged
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637fa69803713f44e9bef21438a8bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitData: {fileID: 11400000, guid: 89bcb186f1854b54bb3d4f40a4aa6b9d, type: 2}
+  _unitData: {fileID: 11400000, guid: c4e68e5b74c6d384ca94b084e12c7bfd, type: 2}
   _basePosition: {fileID: 0}
   _isActive: 1
 --- !u!114 &2762370867490886569
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594e9ed5131dc7e44869675dacd2a593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movenetData: {fileID: 11400000, guid: 235740ca9f846ef46a7d57caef748a70, type: 2}
+  _movenetData: {fileID: 11400000, guid: 2ddbf0001049c454882439b1163232e4, type: 2}
   rigidbodyPath: 
 --- !u!114 &2249425716781677393
 MonoBehaviour:
@@ -460,7 +460,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &3911406909594316206
+--- !u!114 &6332796219265124165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 755177235768322342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95f487c3e2182c24698972b293f51f8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 57f10e4a93bdfed478ca16836a6a90a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamagePopupPrefab: {fileID: 131212003044346369, guid: 66827e6e1b9e3964d9690c3a2aed9298, type: 3}

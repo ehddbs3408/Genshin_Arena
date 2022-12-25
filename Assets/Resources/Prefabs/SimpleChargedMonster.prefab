@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 3736716240454509740}
   - component: {fileID: 3736716240454509741}
   - component: {fileID: 3736716240454509742}
-  - component: {fileID: 290208654055214204}
+  - component: {fileID: 455351078577886058}
   m_Layer: 9
   m_Name: SimpleChargedMonster
   m_TagString: Untagged
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bab02a76ed81a4f94213a9483e8c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDataSO: {fileID: 11400000, guid: bc851aa9b44a6b24aaa3a07172067bda, type: 2}
+  _attackDataSO: {fileID: 11400000, guid: 69fc8d24716c9464ea71baf50653e790, type: 2}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -586,7 +586,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &290208654055214204
+--- !u!114 &455351078577886058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3736716240454509743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cafd9fd73411f5145acf5f5428f082b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 57f10e4a93bdfed478ca16836a6a90a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamagePopupPrefab: {fileID: 131212003044346369, guid: 66827e6e1b9e3964d9690c3a2aed9298, type: 3}

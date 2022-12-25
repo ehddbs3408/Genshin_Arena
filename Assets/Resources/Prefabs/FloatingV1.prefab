@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 2657739894993791282}
   - component: {fileID: 7775824752109070441}
   - component: {fileID: 5544837103697048546}
-  - component: {fileID: 7977976571222748979}
+  - component: {fileID: 3555780771653151698}
   m_Layer: 9
   m_Name: FloatingV1
   m_TagString: Untagged
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637fa69803713f44e9bef21438a8bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitData: {fileID: 11400000, guid: 89bcb186f1854b54bb3d4f40a4aa6b9d, type: 2}
+  _unitData: {fileID: 11400000, guid: 9390859e10d1a6c4d991841ee3035fbe, type: 2}
   _basePosition: {fileID: 0}
   _isActive: 1
 --- !u!114 &9136295218917940392
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594e9ed5131dc7e44869675dacd2a593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movenetData: {fileID: 11400000, guid: 235740ca9f846ef46a7d57caef748a70, type: 2}
+  _movenetData: {fileID: 11400000, guid: 91db358444a487640bdc7c961d82afc9, type: 2}
   rigidbodyPath: 
 --- !u!114 &2657739894993791282
 MonoBehaviour:
@@ -266,7 +266,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7977976571222748979
+--- !u!114 &3555780771653151698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1358603893514176401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95f487c3e2182c24698972b293f51f8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 57f10e4a93bdfed478ca16836a6a90a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamagePopupPrefab: {fileID: 131212003044346369, guid: 66827e6e1b9e3964d9690c3a2aed9298, type: 3}

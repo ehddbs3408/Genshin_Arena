@@ -12,6 +12,8 @@ public class AgentSkillHit : MonoBehaviour
 
     private float totalDamage = 0f;
 
+    private float IncreaseDamage = 0f;
+
     PlayerJsonData data;
 
     WaitForSeconds popupcooltime = new WaitForSeconds(0.05f);
@@ -69,7 +71,8 @@ public class AgentSkillHit : MonoBehaviour
 
     void SkillDamage(float value)
     {
-        activeDamage = data.weaponStat.Damage + (data.weaponStat.Damage * activeskillUI.SkillDamagePercent);
+        IncreaseDamage = (int)( data.weaponStat.Damage + (data.weaponStat.Damage * activeskillUI.SkillDamagePercent));
+        activeDamage = data.weaponStat.Damage + IncreaseDamage;
         Damage = activeDamage * value;
 
     }
@@ -79,22 +82,22 @@ public class AgentSkillHit : MonoBehaviour
         switch(data.weaponStat.id)
         {
             case 0:
-                SkillDamage(120f);
+                SkillDamage(105f);
                 StartCoroutine(TwoUP());
                 totalDamage = Damage * 2;
                 break;
             case 1:
-                SkillDamage(160f);
+                SkillDamage(135f);
                 StartCoroutine(ThreeUP());
                 totalDamage = Damage * 3;
                 break;
             case 2:
-                SkillDamage(210f);
+                SkillDamage(213f);
                 StartCoroutine(ThreeUP());
                 totalDamage = Damage * 3;
                 break;
             case 3:
-                SkillDamage(250f);
+                SkillDamage(225f);
                 StartCoroutine(FourUP());
                 totalDamage = Damage * 4;
                 break;
@@ -109,9 +112,9 @@ public class AgentSkillHit : MonoBehaviour
                 totalDamage = Damage * 3;
                 break;
             case 6:
-                SkillDamage(110f);
+                SkillDamage(135f);
                 StartCoroutine(FourUP());
-                totalDamage = Damage * 4;
+                totalDamage = Damage * 3;
                 break;
             case 7:
                 SkillDamage(160f);
@@ -119,12 +122,12 @@ public class AgentSkillHit : MonoBehaviour
                 totalDamage = Damage * 4;
                 break;
             case 8:
-                SkillDamage(160f);
+                SkillDamage(180f);
                 StartCoroutine(SixUP());
-                totalDamage = Damage * 6;
+                totalDamage = Damage * 5;
                 break;
             case 9:
-                SkillDamage(210f);
+                SkillDamage(215f);
                 StartCoroutine(SevenUP());
                 totalDamage = Damage * 7;
                 break;
