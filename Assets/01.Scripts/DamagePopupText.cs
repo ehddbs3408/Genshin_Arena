@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using TMPro;
 
 public class DamagePopupText : MonoBehaviour
 {
-
+    private TextMeshPro _text;
     private void Start()
     {
         Init();
+        ;
     }
     private void OnEnable()
     {
@@ -19,15 +21,10 @@ public class DamagePopupText : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence();
 
-        seq.Append(transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1)).Join(transform.DOMoveY(3f, 1));
-        seq.Append(transform.DOScale(new Vector3(0f, 0f, 0f), 0.1f));
+        seq.Append(transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1)).Join(transform.DOMoveY(5f, 1));
+        seq.Append(_text.DOColor(new Color(0,0,0,0),0.2f));
         
         seq.AppendCallback(Die);
-
-        //seq.Insert(2f,transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1));
-        //seq.Insert(2f,);
-        //seq.Insert(0f, transform.DOScale(new Vector3(0f,0f,0f), 0.5f));
-        //seq.AppendCallback(Die);
     }
 
     public void Die()
