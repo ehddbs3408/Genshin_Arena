@@ -10,6 +10,7 @@ public class EscSkillExplain : MonoBehaviour
     [SerializeField] GameObject EquipItemPanel;
     [SerializeField] GameObject CharacterInfo;
     [SerializeField] GameObject DrawingWeaponPanel;
+    [SerializeField] GameObject RealGameOutPanel;
 
     bool explainPanelactive = false;
 
@@ -30,7 +31,7 @@ public class EscSkillExplain : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             
-            if (setting.activeSelf == true && volumeSetting.activeSelf == false)
+            if (setting.activeSelf == true && volumeSetting.activeSelf == false && RealGameOutPanel.activeSelf == false)
             {
                 setting.SetActive(false);
             }
@@ -41,6 +42,10 @@ public class EscSkillExplain : MonoBehaviour
             else if(volumeSetting.activeSelf == true)
             {
                 volumeSetting.SetActive(false);
+            }
+            else
+            { 
+                RealGameOutPanel.SetActive(false);
             }
 
             if (setting.activeSelf == false && EquipItemPanel.activeSelf == true)
@@ -59,5 +64,7 @@ public class EscSkillExplain : MonoBehaviour
             }
         }
     }
+
+    
 
 }
