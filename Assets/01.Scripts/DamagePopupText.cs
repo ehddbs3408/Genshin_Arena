@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class DamagePopupText : MonoBehaviour
 {
 
-    Sequence seq;
     private void Start()
     {
-        Sequence seq = DOTween.Sequence();
         Init();
     }
     private void OnEnable()
@@ -18,15 +17,22 @@ public class DamagePopupText : MonoBehaviour
     }
     void Init()
     {
-         
-        seq.Append(transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1));
-        seq.Join(transform.DOMoveY(5f, 1));
+        Sequence seq = DOTween.Sequence();
+
+        seq.Append(transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1)).Join(transform.DOMoveY(3f, 1));
+        seq.Append(transform.DOScale(new Vector3(0f, 0f, 0f), 0.1f));
+        
         seq.AppendCallback(Die);
+
+        //seq.Insert(2f,transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1));
+        //seq.Insert(2f,);
+        //seq.Insert(0f, transform.DOScale(new Vector3(0f,0f,0f), 0.5f));
+        //seq.AppendCallback(Die);
     }
 
     public void Die()
     {
-        seq.Kill();
+        transform.DOKill();
         transform.gameObject.SetActive(false);
         Managers.Resource.Destroy(gameObject);
     }
