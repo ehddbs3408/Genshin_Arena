@@ -3807,7 +3807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[7].waveNextStartTime
-      value: 630
+      value: 720
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[8].waveMaxEnemyCount
@@ -3815,7 +3815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[8].waveNextStartTime
-      value: 720
+      value: 810
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[9].waveMaxEnemyCount
@@ -3823,7 +3823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[9].waveNextStartTime
-      value: 810
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 2033378548833271114, guid: 002acfcb64c37704caed07058fb87b01, type: 3}
       propertyPath: _waveDataList.Array.data[0].optionRandomPosSpawn

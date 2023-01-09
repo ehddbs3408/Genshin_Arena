@@ -44,19 +44,26 @@ public class Player : Unit
 
     public override void OnGethit(int damaged, GameObject dealer)
     {
-        
-        if (_isDamaged) return;
 
-        StartCoroutine(DamgedDelay(1f));
-
-        Debug.Log(this.gameObject.name + " : " + damaged + " Damage");
-
-        Health -= damaged;
-        _hpSlider.value = (float)Health / (float)_unitData.maxHp;
-
-        if (Health <= 0)
+        if (_isDamaged)
         {
-            OnDead();
+            return;
+        }
+
+        else if (_isDamaged == false)
+        {
+
+            StartCoroutine(DamgedDelay(1f));
+
+            Debug.Log(this.gameObject.name + " : " + damaged + " Damage");
+
+            Health -= damaged;
+            _hpSlider.value = (float)Health / (float)_unitData.maxHp;
+
+            if (Health <= 0)
+            {
+                OnDead();
+            }
         }
     }
 
